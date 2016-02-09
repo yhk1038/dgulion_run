@@ -1,0 +1,560 @@
+<div class="preloader">
+	<img src="img/loader.gif" alt="Preloader image">
+</div>
+<nav class="navbar">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><img src="img/logo_lion.png" data-active-url="img/logo-activate_lion.png" alt=""></a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right main-nav">
+				<li><a href="#intro">Intro</a></li>
+				<li><a href="#About">About</a></li>
+				<li><a href="#admin">Admin</a></li>
+				<li><a href="#pricing">Others</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+<header id="intro">
+	<div class="container">
+		<div class="table">
+			<div class="header-text">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h3 class="light white">DGU</h3>
+                        <h3 class="light white">X</h3>
+                        <h3 class="light white" style="margin-bottom: 50px;">Likelion</h3>
+						<h1 class="white typed" style="font-size:35px;"><%= @title %></h1>
+						<span class="typed-cursor" style="font-size:35px;">|</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<section>
+	<div class="cut cut-top"></div>
+	<div class="container">
+		<div class="row intro-tables">
+			<div class="col-md-4">
+				<div class="intro-table intro-table-first">
+					<h5 class="white heading">DGUlion's Schedule</h5>
+					<div class="owl-carousel owl-schedule bottom">
+						<div class="item">
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">지원 기간</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">3/2일 00:00 부터<br>3/12일 23:59 까지</h5>
+								</div>
+							</div>
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">면접 심사<br>(2X 대상자)</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">3/14일 오전+오후<br>(세부사항 별도공지)</h5>
+								</div>
+							</div>
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">모집 결과 발표</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">3/17일 00:00</h5>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">오프닝데이(동국)</h5>
+                                    <h5 class="regular white p15">오프닝데이(전체)</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">3/18일(금) 18시</h5>
+                                    <h5 class="white p15">3/19일(토) ?시</h5>
+								</div>
+							</div>
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">첫 수업</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">3/21일</h5>
+								</div>
+							</div>
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">마지막 수업</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">6/30일</h5>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">아이디어톤</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">6월초 ~ 7/9일</h5>
+								</div>
+							</div>
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">해커톤</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<h5 class="white p15">8월 20일,21일</h5>
+								</div>
+							</div>
+							<div class="schedule-row row">
+								<div class="col-xs-6">
+									<h5 class="regular white p15">자세한 소식은?</h5>
+								</div>
+								<div class="col-xs-6 text-right">
+									<a href="https://www.facebook.com/DGUlion/"><h5 class="white p15" style="text-decoration: underline;">DGUlion Official Facebook</h5></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+			    h5{
+			        font-size:22px;
+			    }
+			</style>
+			<div class="col-md-4">
+				<div class="intro-table intro-table-hover">
+					<h5 class="white heading hide-hover">Question To the Lion</h5>
+					<div class="bottom">
+						<h4 class="white heading small-heading no-margin regular">Q & A</h4>
+						<h4 class="white heading small-pt">자주묻는 질문들</h4>
+						<a href="#" class="btn btn-white-fill expand">보러가기</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="intro-table intro-table-third">
+					<h5 class="white heading">We wonder if..</h5>
+					<div class="owl-testimonials bottom">
+						<div class="item">
+							<h4 class="white heading content">"비전공자에게 프로그래밍을 알려주면 무슨 일이 생길까?"</h4>
+							<h5 class="white heading light author">이두희</h5>
+						</div>
+						<div class="item">
+							<h5 class="white heading content">내 아이디어로 기가막힌 서비스 하나쯤 만들어봐야지!</h5>
+							<h4 class="white heading light author">그런데 주변에 개발자는 없다고?</h4>
+						</div>
+						<div class="item">
+							<h4 class="white heading content">걱정마! 우리가 프로그래밍부터 가르쳐줄게!</h4>
+							<h5 class="white heading light author">멋쟁이사자처럼 at 동국대학교</h5>
+						</div>
+                        <div class="item">
+							<h4 class="white heading content">SO WE SEEK FOR..</h4>
+							<h5 class="white heading light author"><span class="keyword">재미</span>와 <span class="keyword">열정</span>과 <span class="keyword">헌신</span>으로 <br>서비스 런칭까지 완주할 수 있는<br>동국인 학부생 누구나</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="About" class="section section-padded">
+	<div class="container">
+		<div class="row text-center title" style="background-image:url(img/lion_cover_dgu3.png); background-size:contain;">
+			<h2>About</h2>
+            <br>
+            <style>
+                .keyword{
+                    font-size: 25px;
+                    font-weight: bolder;
+                }
+                .bold_underline{
+                    font-weight: bold;
+                    color: #000000;
+                    font-size: 30px;
+                    text-decoration: underline;
+                }
+                .about-light_font{
+                    color: #000000;
+                    font-size: 30px;
+                }
+            </style>
+            <br>
+			<h4 class="light muted bold_underline">대학생들이</h4>
+            <h4 class="light muted about-light_font">내가 만들고 싶은 IT 서비스를</h4>
+            <br>
+            <h4 class="light muted about-light_font" style="font-size:35px;">직접 배워서</h4>
+            <h4 class="light muted bold_underline" style="font-size:35px;">직접 만듭니다</h4>
+            <br>
+            <h4 class="light muted bold_underline" style="font-size:45px;">단 81일만에</h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h4 class="light" style="color:#00a8ff; left:-10%; font-weight: bolder;">2013년 서울대, 2014년 수도권, 2015년 전국.</h4>
+            <h4 class="light" style="color:#00a8ff; right:-10%; font-weight: bolder;">그리고 이번 2016년은 다시 동아리로, 또 해외로!</h4>
+		</div>
+		<div class="row services">
+			<div class="col-md-4">
+				<div class="service">
+					<div class="icon-holder">
+						<img src="img/icons/study-blue.png" alt="" class="icon">
+					</div>
+					<h4 class="heading">STUDY</h4>
+					<p class="description">HTML/CSS부터 jQuery와 같은 프론트앤드 기술과 ruby/rails와 같은 Web Framework를 공부합니다.</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service">
+					<div class="icon-holder">
+						<img src="img/icons/service-blue.png" alt="" class="icon">
+					</div>
+					<h4 class="heading">SERVICE</h4>
+					<p class="description">평소에 '이런IT서비스를 꼭 만들어 보고 싶었다' 라고 생각했던 것들을 본인이 직접 구현합니다.</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service">
+					<div class="icon-holder">
+						<img src="img/icons/network-blue.png" alt="" class="icon">
+					</div>
+					<h4 class="heading">NETWORK</h4>
+					<p class="description">나와 비슷한 생각을 가진 대학교 친구들을 만날 수 있습니다.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row services">
+		    <div class="col-md-3"></div>
+		    <div class="col-md-6 col-xs-12">
+		        <img src="img/scdl_info.png" style="width:100%;">
+		    </div>
+		    <div class="col-md-3"></div>
+		</div>
+	</div>
+	<div class="cut cut-bottom"></div>
+</section>
+<section class="section gray-bg">
+    <img src="img/change_the_world_with_coding2.png" alt="" class="" style="width:100%;">
+</section>
+<section id="admin" class="section gray-bg">
+	<div class="container">
+		<div class="row title text-center">
+			<h2 class="margin-top">Admin</h2>
+			<h4 class="light muted">We're the Team of operators</h4>
+            <h4 class="light muted">from 2015. 3rd. likelion</h4>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team_back1.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">영문학과</h3>
+							<h5 class="light light-white">컴퓨터포비아에서<br>개발을 하기까지</h5>
+						</div>
+					</div>
+					<img src="img/team/yonghyun.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>김용현</h4>
+						<h5 class="muted regular">멋사3기, 재코팀</h5>
+					</div>
+					<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team_back2.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">사학과</h3>
+							<h5 class="light light-white">1 - 5 sessions / month</h5>
+						</div>
+					</div>
+					<img src="img/team/jinyee3.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>류진이</h4>
+						<h5 class="muted regular">멋사3기, 재코팀</h5>
+					</div>
+					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+				</div>
+			</div>
+			
+            <div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team_back3.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">정보통신공학과</h3>
+							<h5 class="light light-white">1 - 5 sessions / month</h5>
+						</div>
+					</div>
+					<img src="img/team/jaecheol.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>이재철</h4>
+						<h5 class="muted regular">멋사3기, 재코팀</h5>
+					</div>
+					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+				</div>
+			</div>
+			
+            <div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team-cover3.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">멀티미디어공학과</h3>
+							<h5 class="light light-white">1 - 5 sessions / month</h5>
+						</div>
+					</div>
+					<img src="img/team/seyong.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>윤세영</h4>
+						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
+					</div>
+					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+				</div>
+			</div>
+		</div>
+        <div class="row">
+			<div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">화학생물공학과</h3>
+							<h5 class="light light-white">1 -5 sessions / month</h5>
+						</div>
+					</div>
+					<img src="img/team/byeongjae.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>최병재</h4>
+						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
+					</div>
+					<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team_back6.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">정보통신공학과</h3>
+							<h5 class="light light-white">1 - 5 sessions / month</h5>
+						</div>
+					</div>
+					<img src="img/team/yeawon.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>정예원</h4>
+						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
+					</div>
+					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+				</div>
+			</div>
+			
+            <div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team-cover2.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">컴퓨터공학과</h3>
+							<h5 class="light light-white">1 - 5 sessions / month</h5>
+						</div>
+					</div>
+					<img src="img/team/hyunmin.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>박현민</h4>
+						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
+					</div>
+					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+				</div>
+			</div>
+			
+            <div class="col-md-3">
+				<div class="team text-center">
+					<div class="cover" style="background:url('img/team/team-cover3.jpg'); background-size:cover;">
+						<div class="overlay text-center">
+							<h3 class="white">국제통상학과</h3>
+							<h5 class="light light-white">1 - 5 sessions / month</h5>
+						</div>
+					</div>
+					<img src="img/team/minho.jpg" alt="Team Image" class="avatar">
+					<div class="title">
+						<h4>전민호</h4>
+						<h5 class="muted regular">멋사3기, 축지법팀</h5>
+					</div>
+					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+				</div>
+			</div>
+        </div>
+	</div>
+</section>
+<section id="pricing" class="section">
+	<div class="container">
+		<div class="row title text-center">
+			<h2 class="margin-top white">Others</h2>
+			<h4 class="light white">멋사 외부 소식들과 관련 영상 및 컨텐츠 모음(이거 문장 다듬어야댐)</h4>
+		</div>
+		<div class="row no-margin">
+			<div class="col-md-7 no-padding col-md-offset-5 pricings text-center">
+				<div class="pricing">
+					<div class="box-main active" data-img="img/thumb.png">
+						<h4 class="white">SUPPORTERS</h4>
+						<h4 class="white regular light">몬가 들어감</h4>
+						<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-white-fill">Sign Up Now</a>
+						<i class="info-icon icon_question"></i>
+					</div>
+					<div class="box-second active">
+						<ul class="white-list text-left">
+							<li>몬가 들어감1</li>
+							<li>몬가 들어감2</li>
+							<li>몬가 들어감3 &amp; props</li>
+							<li>몬가 들어감4</li>
+							<li>몬가 들어감5</li>
+						</ul>
+					</div>
+				</div>
+				<div class="pricing">
+					<div class="box-main" data-img="img/1.jpg">
+						<h4 class="white">몬가 들어감</h4>
+						<h4 class="white regular light">$100.00 <span class="small-font">/ year</span></h4>
+						<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-white-fill">Sign Up Now</a>
+						<i class="info-icon icon_question"></i>
+					</div>
+					<div class="box-second">
+						<ul class="white-list text-left">
+							<li>몬가 들어감1</li>
+							<li>몬가 들어감2</li>
+							<li>몬가 들어감3 &amp; props</li>
+							<li>몬가 들어감4</li>
+							<li>몬가 들어감5</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section section-padded blue-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="owl-twitter owl-carousel">
+					<div class="item text-center">
+						<i class="icon fa fa-twitter"></i>
+						<h4 class="white light">후기가 들어감</h4>
+						<h4 class="light-white light">#코딩 #씨빠빠 #졸려씨빠</h4>
+					</div>
+					<div class="item text-center">
+						<i class="icon fa fa-twitter"></i>
+						<h4 class="white light">후기 두번째</h4>
+						<h4 class="light-white light">#복붙 #복붙붙 #보옥붙</h4>
+					</div>
+					<div class="item text-center">
+						<i class="icon fa fa-twitter"></i>
+						<h4 class="white light">후기 세번째</h4>
+						<h4 class="light-white light">#야 #임마 #너</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content modal-popup">
+			<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+			<h3 class="white">Sign Up(한글 가능)</h3>
+			<form action="sign_in" class="popup-form" method="POST">
+				<input type="text" name="name" class="form-control form-white" placeholder="Full Name">
+				<input type="text" name="email" class="form-control form-white" placeholder="Email Address">
+				<input type="password" name="passwd" class="form-control form-white" placeholder="PassWord">
+				<input type="text" name="phone" class="form-control form-white" placeholder="Phone Call">
+				<input type="text" name="student_id" class="form-control form-white" placeholder="Student ID / Major">
+				<input type="text" name="etc" class="form-control form-white" placeholder="Age / Home-Address">
+				
+				<div class="dropdown">
+					<button id="dLabel" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Member Status
+					</button>
+					<ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="dLabel">
+						<li class="animated lightSpeedIn"><a href="#">멋사 회원입니다.</a></li>
+						<li class="animated lightSpeedIn"><a href="#">회원이 아닙니다.(지원하지 않습니다)</a></li>
+						<li class="animated lightSpeedIn"><a href="#">회원이 아닙니다.(지원할 예정입니다.)(전공자)</a></li>
+						<li class="animated lightSpeedIn"><a href="#">회원이 아닙니다.(지원할 예정입니다.)(비전공자)</a></li>
+					</ul>
+				</div>
+				<div class="checkbox-holder text-left">
+					<div class="checkbox">
+						<input type="checkbox" value="None" id="squaredOne" name="check" />
+						<label for="squaredOne"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-submit">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 text-center-mobile">
+				<h3 class="white">멋쟁이사자처럼에 지원하세요!</h3>
+				<h5 class="light regular light-white">멋쟁이사자처럼 at 동국대학교</h5>
+				<a href="#" class="btn btn-blue ripple trial-button">지원하기</a>
+			</div>
+			<div class="col-sm-6 text-center-mobile">
+				<h3 class="white">Opening Hours <span class="open-blink"></span></h3>
+				<div class="row opening-hours">
+					<div class="col-sm-6 text-center-mobile">
+						<h5 class="light-white light">Mon - Fri</h5>
+						<h3 class="regular white">9:00 - 22:00</h3>
+					</div>
+					<div class="col-sm-6 text-center-mobile">
+						<h5 class="light-white light">Sat - Sun</h5>
+						<h3 class="regular white">10:00 - 18:00</h3>
+					</div>
+					<div class="col-sm-12 text-center-mobile">
+					    <h4 class="regular white">The More on [멋쟁이사자처럼 at 동국대학교] (Facebook) Go</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row bottom-footer text-center-mobile">
+			<div class="col-sm-8">
+				<p>&copy; 2016 All Rights Reserved. Run with <a href="http://likelion.net/">Likelion</a> we're the <a href="#">One</a></p>
+			</div>
+			<div class="col-sm-4 text-right text-center-mobile">
+				<ul class="social-footer">
+					<li><a href="https://www.facebook.com/DGUlion/"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="http://www.twitter.com/codrops"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="https://plus.google.com/101095823814290637419"><i class="fa fa-google-plus"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Holder for mobile navigation -->
+<div class="mobile-nav">
+	<ul>
+	</ul>
+	<a href="#" class="close-link"><i class="arrow_up"></i></a>
+</div>
+<!-- Scripts -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/typewriter.js"></script>
+<script src="js/jquery.onepagenav.js"></script>
+<script src="js/main.js"></script>
