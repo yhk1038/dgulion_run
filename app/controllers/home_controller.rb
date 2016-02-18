@@ -14,4 +14,8 @@ class HomeController < ApplicationController
     
     
   end
+  
+  def question
+    
+  end
 end
