@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def intro
+    redirect_to '/home/main'
   end
 
   def index
