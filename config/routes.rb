@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-        registrations: 'users/registrations'
-      }
-  
+  # devise_for :users, controllers: {
+  #       registrations: 'users/registrations'
+  #     }
+  # AWS ec2 서버올리다가 에러나서 잠시 지워둠.
   root 'home#main'
   
   match ":controller(/:action(/:id))", :via => [:post,:get]
