@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'home#main'
   
   match ":controller(/:action(/:id))", :via => [:post,:get]
+  
   get 'home/intro'
 
   get 'home/index'
