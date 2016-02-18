@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #       registrations: 'users/registrations'
   #     }
   # AWS ec2 서버올리다가 에러나서 잠시 지워둠.
-  root 'home#main'
+  root 'home#intro'
   
   match ":controller(/:action(/:id))", :via => [:post,:get]
   
