@@ -309,7 +309,7 @@
 						<h4>김용현</h4>
 						<h5 class="muted regular">멋사3기, 재코팀</h5>
 					</div>
-					<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>
+					<!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
 				</div>
 			</div>
 			<div class="col-md-3">
@@ -325,7 +325,7 @@
 						<h4>류진이</h4>
 						<h5 class="muted regular">멋사3기, 재코팀</h5>
 					</div>
-					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+					<!--<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>-->
 				</div>
 			</div>
 			
@@ -342,7 +342,7 @@
 						<h4>이재철</h4>
 						<h5 class="muted regular">멋사3기, 재코팀</h5>
 					</div>
-					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+					<!--<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>-->
 				</div>
 			</div>
 			
@@ -359,7 +359,7 @@
 						<h4>윤세영</h4>
 						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
 					</div>
-					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+					<!--<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>-->
 				</div>
 			</div>
 		</div>
@@ -377,7 +377,7 @@
 						<h4>최병재</h4>
 						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
 					</div>
-					<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>
+					<!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
 				</div>
 			</div>
 			<div class="col-md-3">
@@ -393,7 +393,7 @@
 						<h4>정예원</h4>
 						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
 					</div>
-					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+					<!--<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>-->
 				</div>
 			</div>
 			
@@ -410,7 +410,7 @@
 						<h4>박현민</h4>
 						<h5 class="muted regular">멋사3기, 이거사자팀</h5>
 					</div>
-					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+					<!--<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>-->
 				</div>
 			</div>
 			
@@ -427,7 +427,7 @@
 						<h4>전민호</h4>
 						<h5 class="muted regular">멋사3기, 축지법팀</h5>
 					</div>
-					<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+					<!--<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>-->
 				</div>
 			</div>
         </div>
@@ -468,11 +468,11 @@
 					</div>
 					<div class="box-second">
 						<ul class="white-list text-left">
-							<li>멋사 X  서울대</li>
-							<li>멋사 X  이화여대</li>
-							<li>멋사 X  서울시립대</li>
-							<li>멋사 X  서울여대</li>
-							<li>멋사 X  건국대</li>
+							<li>멋사 X  <%= @univ_random[0] %></li>
+							<li>멋사 X  <%= @univ_random[1] %></li>
+							<li>멋사 X  <%= @univ_random[2] %></li>
+							<li>멋사 X  <%= @univ_random[3] %></li>
+							<li>멋사 X  <%= @univ_random[4] %></li>
 						</ul>
 					</div>
 				</div>
@@ -550,18 +550,35 @@
 <div class="modal fade" id="all_lion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content modal-popup">
-			<a href="/users/sign_up" class="close-link"><i class="icon_close_alt2"></i></a>
-			<h3 class="white">LikeLion Univs</h3>
-			<ul class="animated fadeIn" role="menu" aria-labelledby="dLabel">
-				<li class="animated lightSpeedIn"><a href="#">서울대학교</a></li>
-				<li class="animated lightSpeedIn"><a href="#">연세대학교</a></li>
-				<li class="animated lightSpeedIn"><a href="#">고려대학교</a></li>
-				<li class="animated lightSpeedIn"><a href="#">서강대학교</a></li>
-				<li class="animated lightSpeedIn"><a href="#">서울시립대학교</a></li>
-				<li class="animated lightSpeedIn"><a href="#">이화여자대학교</a></li>
-				<li class="animated lightSpeedIn"><a href="#">건국대학교</a></li>
-				<li class="animated lightSpeedIn"><a href="#">서울여자대학교</a></li>
-			</ul>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">
+					<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				</span>
+			</button>
+			<a onclick="return false" class="list-group-item active" disabled="disabled"><h3 class="white non-active">LikeLion Univs</h3></a>
+			<div class="list-group animated fadeIn" role="menu" aria-labelledby="dLabel">
+				<style>
+					.now_size_temp{
+						font-size:21px;
+					}
+					.now_size_temp2{
+						font-size:16px;
+					}
+					.non-active{
+						cursor:default;
+					}
+				</style>
+				<a href="http://brand.likelion.net" class="list-group-item" target="_blank"><p class="now_size_temp"><%= @univ_arr[0] %></p></a>
+				<% i=1 %>
+				<% loop do %>
+					<!--<li class="animated lightSpeedIn">-->
+						<a href="#" class="list-group-item"><p class="now_size_temp"><span class="now_size_temp2">멋쟁이사자처럼 X </span><%= @univ_arr[i] %></p></a>
+					<!--</li>-->
+					<% break if i == @univ_count - 1 %>
+					<% break if i == 200 %>
+					<% i+=1 %>
+				<% end %>
+			</div>
 			<div class="checkbox-holder text-left">
 				<div class="checkbox">
 					<input type="checkbox" value="None" id="squaredOne" name="check" />
@@ -577,7 +594,7 @@
 			<div class="col-sm-6 text-center-mobile">
 				<h3 class="white">멋쟁이사자처럼에 지원하세요!</h3>
 				<h5 class="light regular light-white">멋쟁이사자처럼 at 동국대학교</h5>
-				<a href="#" class="btn btn-blue ripple trial-button">지원하기</a>
+				<a href="http://brand.likelion.net" class="btn btn-blue ripple trial-button" target="_blank">지원하기</a>
 			</div>
 			<div class="col-sm-6 text-center-mobile">
 				<h3 class="white">Opening Hours <span class="open-blink"></span></h3>
