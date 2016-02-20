@@ -20,6 +20,7 @@
 				<li><a href="#About">About</a></li>
 				<li><a href="#admin">Admin</a></li>
 				<li><a href="#pricing">Others</a></li>
+				
 				<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>
 			</ul>
 		</div>
@@ -56,6 +57,17 @@
 							.navbar_logo_fix > img{
 								margin-top:1%;
 							}
+							.about_img{
+								background-image:url(img/lion_cover_dgu3.png); 
+								background-size:contain;
+								background-repeat: no-repeat;
+							}
+							.about_txt_btm1{
+								color:#000000; left:-10%; font-weight: bolder;
+							}
+							.about_txt_btm2{
+								color:#000000; right:-10%; font-weight: bolder;
+							}
 						}
 						@media(max-width:992px){
 							.header_text_type{
@@ -80,6 +92,18 @@
 							}
 							.navbar_logo_fix > img{
 								margin-top:4%;
+							}
+							.about_img{
+								background-image: url(img/lion_cover_dgu3.png);
+							    background-size: contain;
+							    background-position: 0% 100%;
+							    background-repeat: no-repeat;
+							}
+							.about_txt_btm1{
+								color:#000000; width:100%; left: 0%; font-weight: bolder;
+							}
+							.about_txt_btm2{
+								color:#000000; width:100%; right: 0%; font-weight: bolder;
 							}
 						}
 						</style>
@@ -224,7 +248,7 @@
 </section>
 <section id="About" class="section section-padded">
 	<div class="container">
-		<div class="row text-center title" style="background-image:url(img/lion_cover_dgu3.png); background-size:contain;">
+		<div class="row text-center title about_img">
 			<h2>About</h2>
             <br>
             <style>
@@ -250,13 +274,13 @@
             <h4 class="light muted about-light_font" style="font-size:35px;">직접 배워서</h4>
             <h4 class="light muted bold_underline" style="font-size:35px;">직접 만듭니다</h4>
             <br>
-            <h4 class="light muted bold_underline" style="font-size:45px;">단 81일만에</h4>
+            <h4 class="light muted bold_underline" style="font-size:45px;">단 101일만에</h4>
             <br>
             <br>
             <br>
             <br>
-            <h4 class="light" style="color:#00a8ff; left:-10%; font-weight: bolder;">2013년 서울대, 2014년 수도권, 2015년 전국.</h4>
-            <h4 class="light" style="color:#00a8ff; right:-10%; font-weight: bolder;">그리고 이번 2016년은 다시 동아리로, 또 해외로!</h4>
+            <h4 class="light about_txt_btm1">2013년 서울대, 2014년 수도권, 2015년 전국.</h4>
+            <h4 class="light about_txt_btm2">그리고 이번 2016년은 대학 그리고 해외까지!</h4>
 		</div>
 		<div class="row services">
 			<div class="col-md-4">
@@ -290,7 +314,7 @@
 		<div class="row services">
 		    <div class="col-md-3"></div>
 		    <div class="col-md-6 col-xs-12">
-		        <img src="img/scdl_info(160218).png" style="width:100%;">
+		        <img src="img/scdl_info(160220).png" style="width:100%;">
 		        <center><a href="#" data-toggle="modal" data-target="#modal_recruit_noti_card" class="btn btn-blue" style="width:100%;">
 		        	<p class="light recruit_detail" style="color:whitesmoke;">자세한 선발내용 확인하기</p>
 	        	</a></center>
