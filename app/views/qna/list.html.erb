@@ -8,16 +8,55 @@
     <input type="submit" value="등록">
 </form><br><br><br><br>
 
-<table>
+<table width="500px">
 <% 
 QnaPost.all.each do |x|
 %>
+    
     <tr>
         <tr>
-            <td><%= "비밀글입니다." if QnaPost.secret? %><%= x.title unless QnaPost.secret? %></td>
+            <td>제목</td><td><%= "비밀글입니다." if x.secret %><%= x.title unless x.secret %></td>
         </tr>
         <tr>
-            <td><%= x.content unless QnaPost.secret? %></td>
+            <td>
+                내용</td><td><%= x.content unless x.secret %><br>
+                <a href="/qna/delete/<%= x.id %>"><button>삭제</button></a>
+            </td>
         </tr>
     </tr>
+    <tr>
+        <td colspan="2">
+            ---------------------------------------
+        </td>
+    </tr>
+    
+    <% x.qna_comments.each do |y| %>
+    <tr>
+        <td>id</td>
+        <td>
+            내용 : <%= y.content unless y.secret %><%= "비밀글입니다." if y.secret %><br>
+            <a href="/qna/delete_c/<%= y.id %>"><button>삭제</button></a>
+        </td>
+    </tr>
+    <% end %>
+    
+    <tr>
+        <td></td>
+        <td>
+            <form action="/qna/create_c/<%= x.id %>" method="POST">
+                내용 : <textarea col="20" row="20" name="content"></textarea><br>
+                <input type="checkbox" name="secret" id="secret" value="1">
+                <label for="secret">비밀글</label> <input type="submit" value="등록">
+            </form>
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td colspan="2">
+            ---------------------------------------
+        </td>
+    </tr>
+    
 <% end %>
+</table>

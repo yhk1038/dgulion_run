@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160221085151) do
     t.integer  "qna_post_id"
     t.integer  "user_id"
     t.text     "content"
-    t.integer  "secret"
+    t.boolean  "secret"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160221085151) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.integer  "secret"
+    t.boolean  "secret"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160221085151) do
     t.string   "student_id",             default: "", null: false
     t.string   "phonenumber",            default: "", null: false
     t.string   "email",                  default: "", null: false
-    t.string   "password",               default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

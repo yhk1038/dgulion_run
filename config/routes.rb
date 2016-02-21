@@ -1,24 +1,4 @@
 Rails.application.routes.draw do
-  get 'qna/list'
-
-  get 'qna/create'
-
-  get 'qna/delete'
-
-  get 'qna/read'
-
-  get 'qna/update'
-
-  get 'commender/service_input'
-
-  get 'commender/service_save'
-
-  get 'commender/service_delete'
-
-  get 'commender/service_modify'
-
-  get 'commender/service_update'
-
   # devise_for :users, controllers: {
   #       registrations: 'users/registrations'
   #     }
@@ -26,16 +6,6 @@ Rails.application.routes.draw do
   root 'home#intro'
   
   match ":controller(/:action(/:id))", :via => [:post,:get]
-  
-  get 'home/intro'
-
-  get 'home/index'
-
-  get 'home/menu1'
-  
-  get 'home/main'
-  
-  get 'home/question'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
