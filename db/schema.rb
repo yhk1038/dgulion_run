@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211061119) do
+ActiveRecord::Schema.define(version: 20160221085151) do
+
+  create_table "qna_comments", force: :cascade do |t|
+    t.integer  "qna_post_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.integer  "secret"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "qna_posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "secret"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "desc_short"
+    t.text     "logo_url"
+    t.string   "name"
+    t.string   "link_url"
+    t.text     "desc_long"
+    t.boolean  "is_live"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "", null: false

@@ -571,18 +571,16 @@
 			<div class="col-md-7 no-padding col-md-offset-5 pricings text-center">
 				<div class="pricing">
 					<div class="box-main active" data-img="img/thumb.png">
-						<h4 class="white">SUPPORTERS</h4>
-						<h4 class="white regular light">몬가 들어감</h4>
-						<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-white-fill">Sign Up Now</a>
+						<h4 class="white">SERVICES</h4>
+						<h4 class="white regular light">멋사출신 서비스</h4>
+						<a href="#" data-toggle="modal" data-target="#all_service" class="btn btn-white-fill">모두보기</a>
 						<i class="info-icon icon_question"></i>
 					</div>
 					<div class="box-second active">
 						<ul class="white-list text-left">
-							<li>몬가 들어감1</li>
-							<li>몬가 들어감2</li>
-							<li>몬가 들어감3 &amp; props</li>
-							<li>몬가 들어감4</li>
-							<li>몬가 들어감5</li>
+							<% Service.first(5).each do |s| %>
+							<li><a href="<%= s.link_url %>" target="_blank" style="color:white;"><%= s.name %></a></li>
+							<% end %>
 						</ul>
 					</div>
 				</div>
@@ -680,6 +678,54 @@
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="all_service" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content modal-popup">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">
+					<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				</span>
+			</button>
+			<a onclick="return false" class="list-group-item active" disabled="disabled"><h3 class="white non-active">LikeLion Services</h3></a>
+			<div class="list-group animated fadeIn" role="menu" aria-labelledby="dLabel">
+				<style>
+					.now_size_temp{
+						font-size:21px;
+					}
+					.now_size_temp2{
+						font-size:16px;
+					}
+					.non-active{
+						cursor:default;
+					}
+				</style>
+				<% Service.all.each do |sv| %>
+					<% if sv.is_live.to_s == "true" %>
+						<a href="<%= sv.link_url %>" class="list-group-item" target="_blank">
+							<img src="<%= sv.logo_url %>" style="width:50%;"><br>
+							<p class="now_size_temp3"><%= sv.name %></p>
+							<p class="now_size_temp4"><%= sv.desc_short %></p>
+							<p class="now_size_temp5"><%= sv.desc_long %></p>
+						</a>
+					<% else %>
+						<a href="#" class="list-group-item" target="_blank">
+							<img src="<%= sv.logo_url %>" style="width:50%;"><br>
+							<p class="now_size_temp3"><%= sv.name %></p>
+							<p class="now_size_temp4"><%= sv.desc_short %></p>
+							<p class="now_size_temp5"><%= sv.desc_long %></p>
+						</a>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="checkbox-holder text-left">
+				<div class="checkbox">
+					<input type="checkbox" value="None" id="squaredOne" name="check" />
+					<label for="squaredOne"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="modal fade" id="all_lion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content modal-popup">
@@ -696,6 +742,15 @@
 					}
 					.now_size_temp2{
 						font-size:16px;
+					}
+					.now_size_temp3{
+						font-size:25px;
+					}
+					.now_size_temp4{
+						font-size:18px;
+					}
+					.now_size_temp5{
+						font-size:15px;
 					}
 					.non-active{
 						cursor:default;

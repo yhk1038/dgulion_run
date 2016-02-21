@@ -1,0 +1,23 @@
+<form action="/qna/create" method="POST">
+    제목 : <input type="text" name="title"><br>
+    <!--내용 : <input type="text" name="content">-->
+    내용 : <textarea col="20" row="20" name="content"></textarea><br>
+    <input type="checkbox" name="secret" id="secret" value="1">
+    <label for="secret">비밀글</label><br>
+    <font color="red"><%= flash[:error] %></font>
+    <input type="submit" value="등록">
+</form><br><br><br><br>
+
+<table>
+<% 
+QnaPost.all.each do |x|
+%>
+    <tr>
+        <tr>
+            <td><%= "비밀글입니다." if QnaPost.secret? %><%= x.title unless QnaPost.secret? %></td>
+        </tr>
+        <tr>
+            <td><%= x.content unless QnaPost.secret? %></td>
+        </tr>
+    </tr>
+<% end %>

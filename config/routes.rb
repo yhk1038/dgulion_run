@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'qna/list'
+
+  get 'qna/create'
+
+  get 'qna/delete'
+
+  get 'qna/read'
+
+  get 'qna/update'
+
+  get 'commender/service_input'
+
+  get 'commender/service_save'
+
+  get 'commender/service_delete'
+
+  get 'commender/service_modify'
+
+  get 'commender/service_update'
+
   # devise_for :users, controllers: {
   #       registrations: 'users/registrations'
   #     }

@@ -1,0 +1,20 @@
+<form action="/commender/service_update" method="POST">
+    <input type="hidden" name="id" value="<%= @t.id %>">
+    서비스 short description : <input type="text" name="desc_short" value="<%= @t.desc_short%>"><br>
+    로고(이미지 url): <input type="text" name="logo_url" value="<%= @t.logo_url %>"><br>
+    서비스 제목 : <input type="text" name="name" value="<%= @t.name %>"><br>
+    사이트 주소 : <input type="text" name="link_url" value="<%= @t.link_url %>"><br>
+    서비스 상세 설명 : <input type="text" name="desc_long" value="<%= @t.desc_long %>"><br>
+    서비스 생존 여부 : <input type="text" name="is_live" value="<%= @t.is_live %>"><br>
+    <input type="submit" value="등록"><br>
+</form><br><br><br><br>
+<% Service.all.each do |x| %>
+    id : <%= x.id %><br>
+    서비스 short description : <%= x.desc_short %><br>
+    로고(이미지 url): <img src="<%= x.logo_url %>" style="width:200px;"><br>
+    서비스 제목 : <%= x.name %><br>
+    사이트 주소 : <%= x.link_url %><br>
+    서비스 상세 설명 : <%= x.desc_long %><br>
+    서비스 생존 여부 : <%= x.is_live %><br>
+    <a href="/commender/service_delete/<%= x.id %>">[삭제하기]</a> | <a href="/commender/service_modify/<%= x.id %>">[수정하기]</a><br><br><br><br>
+<% end %>

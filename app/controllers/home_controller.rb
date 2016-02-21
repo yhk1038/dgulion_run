@@ -31,7 +31,7 @@ class HomeController < ApplicationController
                     '#','#','#',                                                     ##단국대, ##동덕여대, ##부산대,
                     '#','#','#',                                                     ##서강대, ##서울과기대, ##서울대,
                     'http://uos.likelion.net','http://swu.likelion.net','#',         #서울시립대, 서울여대, #성균관대,
-                    '#','#','#',                                                     ##성신여대, ##숙명여대, ##연세대,
+                    '#','#','http://yeonsei.likelion.net',                           ##성신여대, ##숙명여대, #연세대,
                     '#','#','http://ehwa.likelion.net',                              ##영남대, ##원광대, #이화여대,
                     '#','#','#',                                                     ##전남대, ##중앙대, ##충남대,
                     'http://kaist.likelion.net','#','http://hanyang.likelion.net',   #카이스트, ##평택대, #한양대
