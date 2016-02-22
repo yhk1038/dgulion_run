@@ -25,17 +25,17 @@ class HomeController < ApplicationController
                 '이화여대','전남대','중앙대','충남대','카이스트',
                 '평택대','한양대','UNIST']
     univ_url_arr = [
-                    'http://brand.likelion.net',                                     #멋사 중앙페이지
-                    '#','#','#',                                                     ##강원대, ##경북대, ##경희대,
-                    'http://konkuk.likelion.net','#','#',                            #건국대, ##고려대, ##국민대,
-                    '#','#','#',                                                     ##단국대, ##동덕여대, ##부산대,
-                    '#','#','#',                                                     ##서강대, ##서울과기대, ##서울대,
-                    'http://uos.likelion.net','http://swu.likelion.net','#',         #서울시립대, 서울여대, #성균관대,
-                    '#','#','http://yeonsei.likelion.net',                           ##성신여대, ##숙명여대, #연세대,
-                    '#','#','http://ehwa.likelion.net',                              ##영남대, ##원광대, #이화여대,
-                    '#','#','#',                                                     ##전남대, ##중앙대, ##충남대,
-                    'http://kaist.likelion.net','#','http://hanyang.likelion.net',   #카이스트, ##평택대, #한양대
-                    'http://unist.likelion.net'                                      #유니스트
+                    'http://brand.likelion.net',                                                                    #멋사 중앙페이지
+                    'http://kangwon.likelion.net','http://knu.likelion.net','',                                     ##강원대, ##경북대, ##경희대,
+                    'http://konkuk.likelion.net','http://korea.likelion.net/','http://kookmin.likelion.net/',       #건국대, #고려대, #국민대,
+                    'http://dankook.likelion.net/','http://dongduk.likelion.net/','http://pnu.likelion.net/',       #단국대, #동덕여대, #부산대,
+                    'http://sogang.likelion.net/','http://seoultech.likelion.net','http://snu.likelion.net/',       ##서강대, ##서울과기대, #서울대,
+                    'http://uos.likelion.net/','http://swu.likelion.net','http://skku.likelion.net/',               #서울시립대, ##서울여대, ##성균관대,
+                    'http://sungshin.likelion.net/','http://sookmyung.likelion.net/','http://yeonsei.likelion.net', ##성신여대, ##숙명여대, #연세대,
+                    'http://yu.likelion.net/','http://wku.likelion.net/','http://ehwa.likelion.net',                #영남대, #원광대, ##이화여대,
+                    'http://jnu.likelion.net/','http://cau.likelion.net/','http://cnu.likelion.net/',               ##전남대, #중앙대, #충남대,
+                    'http://kaist.likelion.net','http://ptu.likelion.net/','http://hyu.likelion.net/',              #카이스트, #평택대, #한양대
+                    'http://unist.likelion.net'                                                                     #유니스트
                     ]
     #########################################
     
