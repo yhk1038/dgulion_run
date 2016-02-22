@@ -1,62 +1,352 @@
-<form action="/qna/create" method="POST">
-    제목 : <input type="text" name="title"><br>
-    <!--내용 : <input type="text" name="content">-->
-    내용 : <textarea col="20" row="20" name="content"></textarea><br>
-    <input type="checkbox" name="secret" id="secret" value="1">
-    <label for="secret">비밀글</label><br>
-    <font color="red"><%= flash[:error] %></font>
-    <input type="submit" value="등록">
-</form><br><br><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  <title>DGUlion(멋사X동국)</title>
+  
+  
+  
+  <!--------------------------------------------------------------------------------------------------->
+                                        <!--부트스트랩 CDN-->
+  
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+            integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+            integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+      
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+              integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+              
+  <!--------------------------------------------------------------------------------------------------->
+  
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  
+  
+  
+  
+    <meta name="description" content="Cardio is a free one page template made exclusively for Codrops by Luka Cvetinovic" />
+	<meta name="keywords" content="html template, css, free, one page, gym, fitness, web design" />
+	<meta name="author" content="Luka Cvetinovic for Codrops" />
+	<!-- Favicons (created with http://realfavicongenerator.net/)-->
+	<link rel="apple-touch-icon" sizes="57x57" href="../home/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../home/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="icon" type="image/png" href="../home/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../home/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="../home/img/favicons/manifest.json">
+	<link rel="shortcut icon" href="../home/img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#00a8ff">
+	<meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Normalize -->
+	<link rel="stylesheet" type="text/css" href="../home/css/normalize.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="../home/css/bootstrap.css">
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="../home/css/owl.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="../home/css/animate.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="../home/fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="../home/fonts/eleganticons/et-icons.css">
+	<!-- Main style -->
+	<link rel="stylesheet" type="text/css" href="../home/css/cardio.css">
+	
+	<!--글꼴 노토산스-->
+	  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<!--/-->
 
-<table width="500px">
-<% 
-QnaPost.all.each do |x|
-%>
-    
-    <tr>
-        <tr>
-            <td>제목</td><td><%= "비밀글입니다." if x.secret %><%= x.title unless x.secret %></td>
-        </tr>
-        <tr>
-            <td>
-                내용</td><td><%= x.content unless x.secret %><br>
-                <a href="/qna/delete/<%= x.id %>"><button>삭제</button></a>
-            </td>
-        </tr>
-    </tr>
-    <tr>
-        <td colspan="2">
-            ---------------------------------------
-        </td>
-    </tr>
-    
-    <% x.qna_comments.each do |y| %>
-    <tr>
-        <td>id</td>
-        <td>
-            내용 : <%= y.content unless y.secret %><%= "비밀글입니다." if y.secret %><br>
-            <a href="/qna/delete_c/<%= y.id %>"><button>삭제</button></a>
-        </td>
-    </tr>
-    <% end %>
-    
-    <tr>
-        <td></td>
-        <td>
-            <form action="/qna/create_c/<%= x.id %>" method="POST">
-                내용 : <textarea col="20" row="20" name="content"></textarea><br>
-                <input type="checkbox" name="secret" id="secret" value="1">
-                <label for="secret">비밀글</label> <input type="submit" value="등록">
+</head>
+<body style="@import url(http://fonts.googleapis.com/css?family=Noto+Sans);" style="background-color:#BDE5F6;">
+<!--===================================================================================================================================================-->
+
+
+
+
+<!--===================================================================================================================================================-->
+
+<!--<div class="preloader">-->
+	<!--<img src="../home/img/loader.gif" alt="Preloader image">-->
+<!--</div>-->
+<nav class="navbar" style="opacity: 1; background: rgb(39, 48, 61); top:0; padding:15px;">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand navbar_logo_fix" href="#" style=""><img src="../home/img/dgulion_simple_logo_deactive_160222(337x52).png" data-active-url="../home/img/dgulion_simple_logo_160222(337x52).png" alt="" style="width:80%; height:initial;"></a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right main-nav">
+				<li><a href="#intro">Intro</a></li>
+				<li><a href="#About">About</a></li>
+				<li><a href="#admin">Admin</a></li>
+				<li><a href="#pricing">Others</a></li>
+				
+				<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+
+<!--===================================================================================================================================================-->
+<style>
+@media(max-width:1950px){
+	.header_text_type{
+		font-size:36px;
+		line-height:1.5;
+	}
+	.header_text_up{
+		font-size:30px;
+		line-height:1.5;
+	}
+	.top_top{
+		
+	}
+	.top_bottom{
+		margin-bottom: 50px;
+	}
+	.navbar_logo_fix > img{
+		margin-top:1%;
+	}
+	.about_img{
+		background-image:url(img/lion_cover_dgu3.png); 
+		background-size:contain;
+		background-repeat: no-repeat;
+	}
+	.about_txt_btm1{
+		color:#000000; left:-10%; font-weight: bolder;
+	}
+	.about_txt_btm2{
+		color:#000000; right:-10%; font-weight: bolder;
+	}
+	.mid_input{
+	    
+	}
+	.last_submit{
+	    height: 136px;
+	    margin-top:26px;
+	}
+}
+@media(max-width:992px){
+	.header_text_type{
+		font-size: 26px;
+		line-height:1.0;
+	}
+	.header_text_up{
+		font-size:20px;
+		line-height:1.0;
+	}
+	.top_top{
+		margin-top:11%;
+	}
+	.top_bottom{
+		margin-bottom: 50px;
+	}
+	.navbar_logo_fix{
+		width:80%;
+	}
+	nav.navbar-fixed-top{
+		padding-bottom:0;
+	}
+	.navbar_logo_fix > img{
+		margin-top:4%;
+	}
+	.about_img{
+		background-image: url(img/lion_cover_dgu3.png);
+	    background-size: contain;
+	    background-position: 0% 100%;
+	    background-repeat: no-repeat;
+	}
+	.about_txt_btm1{
+		color:#000000; width:100%; left: 0%; font-weight: bolder;
+	}
+	.about_txt_btm2{
+		color:#000000; width:100%; right: 0%; font-weight: bolder;
+	}
+	.mid_input{
+	    padding:0;
+	}
+	.last_submit{
+	    padding:0;
+	    height: 50px;
+	    margin-top: inherit;
+	}
+}
+</style>
+
+
+<header id="intro" class="animated fadeIn" style="background-image: url(../home/img/qna_bg.png);" style="background-color:#BDE5F6;">
+    <div class="container" style="top:85px; margin: 0 18%; padding: 50px 0; width: 64%;">
+        <p style="color:#000; font-size: 25px; font-weight: bolder;">Ask Your question</p>
+        <div class="row" style="background:#B7DEEF; padding: 25px 15px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; border: 2px solid;">
+            <form action="/qna/create" method="POST">
+                <div class="col-md-2">
+                    <img src="http://t1.daumcdn.net/thumb/C216x216/?fname=http%3A%2F%2Fi1.daumcdn.net%2Fsvc%2Fimage%2FU03%2Fsdb%2F566631A0050FB00002" class="img-thumbnail" style="width: 100%;height: 165px;">
+                </div>
+                <div class="col-md-9 form-group" style="padding-right: 0; margin:0;">
+                    <label for="secret" style="color:#777;">비밀글</label> <input type="checkbox" name="secret" id="secret" value="1">
+                    <input class="form-control" type="text" name="title" placeholder="your question title" style="padding:5px 15px;border-radius:10;border-top-left-radius: 25px;">
+                    <!--내용 : <input type="text" name="content">-->
+                    <textarea class="form-control input-lg" col="20" row="20" name="content" placeholder="ask your question" style="padding:5px 15px;border-radius:10; height:100px;"></textarea>
+                    <font color="red"><%= flash[:error] %></font>
+                </div>
+                <div class="col-md-1" style="padding-left: 0; height: 100%;">
+                    <input class="btn btn-primary" type="submit" value="등록" style="width:100%; height: 136px; margin-top: 26px; border-bottom-right-radius: 25px; background-color: rgba(119, 121, 238, 0.49); padding: 0%;">
+                </div>
             </form>
-        </td>
-    </tr>
-    
-    
-    <tr>
-        <td colspan="2">
-            ---------------------------------------
-        </td>
-    </tr>
-    
-<% end %>
-</table>
+        </div>
+        <br><br><br><br>
+        <style>
+            .llll tr td{
+                color:#000;
+            }
+        </style>
+        
+        <p style="color:#000; font-size: 25px; font-weight: bolder;">Ask Your question</p>
+        <div class="row" style="background:#B7DEEF; padding: 25px 15px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; border: 2px solid;">
+            <form action="/qna/create" method="POST">
+                <div class="col-md-12">
+                    <input class="form-control" type="text" name="title" placeholder="your question title" style="padding:5px 15px;border-radius:10;border-top-left-radius: 25px;">
+                </div>
+                <div class="col-md-2">
+                    <img src="http://t1.daumcdn.net/thumb/C216x216/?fname=http%3A%2F%2Fi1.daumcdn.net%2Fsvc%2Fimage%2FU03%2Fsdb%2F566631A0050FB00002" class="img-thumbnail" style="width: 100%;height: 165px;">
+                </div>
+                <div class="col-md-10 form-group" style="margin:0;">
+                    
+                    <!--내용 : <input type="text" name="content">-->
+                    <textarea class="form-control input-lg" col="20" row="20" name="content" placeholder="ask your question" style="padding:5px 15px;border-radius:10; height:100px;border-bottom-right-radius: 25px"></textarea>
+                    <font color="red"><%= flash[:error] %></font>
+                </div>
+            </form>
+        </div>
+        
+        
+        
+        <div class="row" style="background:#B7DEEF; padding: 25px 15px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; border: 2px solid;">
+            <form action="/qna/create" method="POST">
+                <div class="col-md-2">
+                    <img src="http://t1.daumcdn.net/thumb/C216x216/?fname=http%3A%2F%2Fi1.daumcdn.net%2Fsvc%2Fimage%2FU03%2Fsdb%2F566631A0050FB00002" class="img-thumbnail" style="width: 100%;height: 165px;">
+                </div>
+                <div class="col-md-9 form-group" style="padding-right: 0; margin:0;">
+                    <label for="secret" style="color:#777;">비밀글</label> <input type="checkbox" name="secret" id="secret" value="1">
+                    <input class="form-control" type="text" name="title" placeholder="your question title" style="padding:5px 15px;border-radius:10;border-top-left-radius: 25px;">
+                    <!--내용 : <input type="text" name="content">-->
+                    <textarea class="form-control input-lg" col="20" row="20" name="content" placeholder="ask your question" style="padding:5px 15px;border-radius:10; height:100px;"></textarea>
+                    <font color="red"><%= flash[:error] %></font>
+                </div>
+                <div class="col-md-1" style="padding-left: 0; height: 100%;">
+                    <input class="btn btn-primary" type="submit" value="등록" style="width:100%; height: 136px; margin-top: 26px; border-bottom-right-radius: 25px; background-color: rgba(119, 121, 238, 0.49); padding: 0%;">
+                </div>
+            </form>
+        </div>
+        <div class="row" style="background:#B7DEEF; padding: 25px 15px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; border: 2px solid;">
+            <form action="/qna/create" method="POST">
+                <div class="col-md-2">
+                    <img src="http://t1.daumcdn.net/thumb/C216x216/?fname=http%3A%2F%2Fi1.daumcdn.net%2Fsvc%2Fimage%2FU03%2Fsdb%2F566631A0050FB00002" class="img-thumbnail" style="width: 100%;height: 165px;">
+                </div>
+                <div class="col-md-9 form-group" style="padding-right: 0; margin:0;">
+                    <label for="secret" style="color:#777;">비밀글</label> <input type="checkbox" name="secret" id="secret" value="1">
+                    <input class="form-control" type="text" name="title" placeholder="your question title" style="padding:5px 15px;border-radius:10;border-top-left-radius: 25px;">
+                    <!--내용 : <input type="text" name="content">-->
+                    <textarea class="form-control input-lg" col="20" row="20" name="content" placeholder="ask your question" style="padding:5px 15px;border-radius:10; height:100px;"></textarea>
+                    <font color="red"><%= flash[:error] %></font>
+                </div>
+                <div class="col-md-1" style="padding-left: 0; height: 100%;">
+                    <input class="btn btn-primary" type="submit" value="등록" style="width:100%; height: 136px; margin-top: 26px; border-bottom-right-radius: 25px; background-color: rgba(119, 121, 238, 0.49); padding: 0%;">
+                </div>
+            </form>
+        </div>
+        
+        <table class="table llll" width="500px">
+            <% QnaPost.all.each do |x| %>
+                <tr>
+                    <tr>
+                        <td>제목</td><td><%= "비밀글입니다." if x.secret %><%= x.title unless x.secret %></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            내용</td><td><%= x.content unless x.secret %><br>
+                            <a href="/qna/delete/<%= x.id %>"><button>삭제</button></a>
+                        </td>
+                    </tr>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        ---------------------------------------
+                    </td>
+                </tr>
+                
+                <% x.qna_comments.each do |y| %>
+                <tr>
+                    <td>id</td>
+                    <td>
+                        내용 : <%= y.content unless y.secret %><%= "비밀글입니다." if y.secret %><br>
+                        <a href="/qna/delete_c/<%= y.id %>"><button>삭제</button></a>
+                    </td>
+                </tr>
+                <% end %>
+                
+                <tr>
+                    <td></td>
+                    <td>
+                        <form action="/qna/create_c/<%= x.id %>" method="POST">
+                            내용 : <textarea col="20" row="20" name="content"></textarea><br>
+                            <input type="checkbox" name="secret" id="secret" value="1">
+                            <label for="secret">비밀글</label> <input type="submit" value="등록">
+                        </form>
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td colspan="2">
+                        ---------------------------------------
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</header>
+<!--===================================================================================================================================================-->
+<!-- Holder for mobile navigation -->
+<div class="mobile-nav">
+	<ul>
+	</ul>
+	<a href="#" class="close-link"><i class="arrow_up"></i></a>
+</div>
+<!-- Scripts -->
+<script src="../home/js/jquery-1.11.1.min.js"></script>
+<script src="../home/js/owl.carousel.min.js"></script>
+<script src="../home/js/bootstrap.min.js"></script>
+<script src="../home/js/wow.min.js"></script>
+<script src="../home/js/typewriter.js"></script>
+<script src="../home/js/jquery.onepagenav.js"></script>
+<script src="../home/js/main.js"></script>
+<!--===================================================================================================================================================-->
+
+
+
+
+<!--===================================================================================================================================================-->
+
+</body>
+</html>

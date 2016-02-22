@@ -1,6 +1,6 @@
 class QnaController < ApplicationController
   def list
-    
+    render :layout => false
   end
 
   def create
