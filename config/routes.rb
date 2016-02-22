@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  # devise_for :users, controllers: {
-  #       registrations: 'users/registrations'
-  #     }
+  
   # AWS ec2 서버올리다가 에러나서 잠시 지워둠.
   root 'home#intro'
   
   match ":controller(/:action(/:id))", :via => [:post,:get]
+  devise_for :users, controllers: {
+        registrations: 'users/registrations'
+      }
+      
+  get "users/sign_up"
+  post ':controller(/:action(/:id(.:format)))'
+  get ':controller(/:action(/:id(.:format)))'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

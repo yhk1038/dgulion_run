@@ -463,7 +463,7 @@
 					<div class="cover" style="background:url('img/team/team_back3.jpg'); background-size:cover;">
 						<div class="overlay text-center">
 							<h3 class="white">정보통신공학과</h3>
-							<h5 class="light light-white">코끼리를탄건 바로 나에요</h5>
+							<h5 class="light light-white">전공자 같지 않은 전공자</h5>
 						</div>
 					</div>
 					<img src="img/team/jaecheol.jpg" alt="Team Image" class="avatar">
@@ -738,7 +738,7 @@
 						cursor:default;
 					}
 				</style>
-				<% Service.all.each do |sv| %>
+				<% Service.all.reverse.each do |sv| %>
 					<% if sv.is_live.to_s == "true" %>
 						<a href="<%= sv.link_url %>" class="list-group-item" target="_blank">
 							<img src="<%= sv.logo_url %>" style="width:50%;"><br>
