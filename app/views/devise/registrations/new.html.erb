@@ -1,51 +1,154 @@
-<h2>회원 가입</h2>
+<h2 class="white">Sign Up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  
+  <!--<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>-->
+  <!--형 저 잠깐 뭐 실험좀 해볼께요-->
+  <!--디자인 바꾸기-->
+  
+  
+  <!--=====================실험전====================================-->
+  <!--<div class="form-control form-white">-->
+    
+  <!--  <%#= f.text_field :username, autofocus: true %>-->
+  <!--</div>-->
+  
+  <!--<div class="field">-->
+  <!--  <%#= f.label :email, '이메일' %><br>-->
+  <!--  <%#= f.email_field :email, autofocus: true %>-->
+  <!--</div>-->
 
+  <!--<div class="field">-->
+  <!--  <%#= f.label :password, '비밀번호' %>-->
+  <!--  <%# if @minimum_password_length %>-->
+  <!--  <em>(8 자리 이상)</em><br>-->
+  <!--  <%# end %>-->
+  <!--  <%#= f.password_field :password, autocomplete: "off" %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+  <!--  <%#= f.label :password_confirmation, '비밀번호확인' %><br>-->
+  <!--  <%#= f.password_field :password_confirmation, autocomplete: "off" %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+  <!--  <%#= f.label :major, '학과' %><br>-->
+  <!--  <%#= f.text_field :major, autofocus: true %>-->
+  <!--</div>-->
+  
+  <!--<div class="field">-->
+  <!--  <%#= f.label :student_id, '학번' %><br>-->
+  <!--  <%#= f.text_field :student_id, autofocus: true %>-->
+  <!--</div>-->
+  
+  <!--<div class="field">-->
+  <!--  <%#= f.label :phonenumber, '휴대폰번호' %><br>-->
+  <!--  <%#= f.text_field :phonenumber, autofocus: true %>-->
+  <!--</div>-->
+  <!--<br>-->
+  <!--<div class="actions">-->
+  <!--  <%#= f.submit "완료" %>-->
+  <!--</div>-->
+  <!--=====================실험전 원본 여기까지====================================-->
+  
+  <!--=====================실험시작====================================-->
   <div class="field">
-    <%= f.label :username, '이름' %><br>
-    <%= f.text_field :username, autofocus: true %>
+    <input autofocus="autofocus" type="text" value="" name="user[username]"  class="form-control form-white" placeholder="이름"/>
   </div>
   
   <div class="field">
-    <%= f.label :email, '이메일' %><br>
-    <%= f.email_field :email, autofocus: true %>
+    <input autofocus="autofocus" type="email" value="" name="user[email]" class="form-control form-white" placeholder="이메일"/>
   </div>
 
   <div class="field">
-    <%= f.label :password, '비밀번호' %>
-    <% if @minimum_password_length %>
-    <em>(8 자리 이상)</em><br>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <input autocomplete="off" type="password" name="user[password]" class="form-control form-white" placeholder="비밀번호(8자리 이상)"/>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, '비밀번호확인' %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <input autocomplete="off" type="password" name="user[password_confirmation]" class="form-control form-white" placeholder="비밀번호 확인"/>
   </div>
 
   <div class="field">
-    <%= f.label :major, '학과' %><br>
-    <%= f.text_field :major, autofocus: true %>
+    <input autofocus="autofocus" type="text" value="" name="user[major]" class="form-control form-white" placeholder="전공"/>
   </div>
   
   <div class="field">
-    <%= f.label :student_id, '학번' %><br>
-    <%= f.text_field :student_id, autofocus: true %>
+    <!--<label for="user_student_id">학번</label><br>-->
+    <input autofocus="autofocus" type="text" value="" name="user[student_id]" class="form-control form-white" placeholder="학번"/>
   </div>
   
   <div class="field">
-    <%= f.label :phonenumber, '휴대폰번호' %><br>
-    <%= f.text_field :phonenumber, autofocus: true %>
+    <!--<label for="user_phonenumber">휴대폰번호</label><br>-->
+    <input autofocus="autofocus" type="text" value="" name="user[phonenumber]" class="form-control form-white" placeholder="휴대폰번호"/>
   </div>
   <br>
   <div class="actions">
-    <%= f.submit "완료" %>
+    <input type="submit" class="btn btn-submit" name="commit" value="Submit" />
   </div>
+  
+  <!--=====================실험코드 여기까지====================================-->
+  
+  
 <% end %> 
 <% if current_user %>
-<% link_to '로그아웃', destroy_user_session_path %>
+<% link_to 'Log Out', destroy_user_session_path %>
 <% end %>
+
+
 <%= render "devise/shared/links" %>
+
+<style>
+  .field label{
+    
+  }
+  .field input{
+    /*.popup-form .form-control*/
+    margin: 20px 0;
+    
+    /*.form-control.form-white*/
+    color: #fff;
+    border: 2px solid white;
+    background: transparent;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    text-align: center;
+    
+    /*.form-control*/
+    font-size: 18px;
+    position: relative;
+    left: 0;
+    height: auto;
+    padding: 20px 30px;
+    /*border: 1px;*/
+    border-radius: 0;
+    /*box-shadow: 0;*/
+    
+    /*.form-control*/
+    display: block;
+    width: 100%;
+    /*height: 34px;*/
+    /*padding: 6px 12px;*/
+    /*font-size: 14px;*/
+    line-height: 1.42857143;
+    /*color: #555;*/
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    /*border-radius: 4px;*/
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    
+    /*input, button, select, textarea*/
+    font-family: inherit;
+    
+    /*button, input, optgroup, select, textarea*/
+    font: inherit;
+    
+    /***/
+    box-sizing: border-box;
+  }
+</style>
