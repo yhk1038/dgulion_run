@@ -1,3 +1,6 @@
+User.create!([
+  {username: "김용현", major: "영어영문학과", student_id: "2012110214", phonenumber: "01024824541", email: "yhk1038@hanmail.net", encrypted_password: "$2a$10$1Gswx1zASGO8uXFJzp4Fdu8WEH7wxtee/fc9ecy5iudu6kEd8AJJW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-02-27 04:37:16", last_sign_in_at: "2016-02-27 04:37:16", current_sign_in_ip: "58.140.184.244", last_sign_in_ip: "58.140.184.244", confirmation_token: nil, confirmed_at: nil, confirmation_sent_at: nil, unconfirmed_email: nil}
+])
 QnaPost.create!([
   {user_id: nil, title: "1", content: "1", secret: false}
 ])
