@@ -2,6 +2,18 @@ class QnaController < ApplicationController
   def list
     render :layout => false
   end
+  
+  def send_email
+    m = Question.new
+    m.user_name     = params[:user_name]
+    m.user_major    = params[:user_major]
+    m.user_email    = params[:user_email]
+    m.user_phone    = params[:user_phone]
+    m.user_message  = params[:user_message]
+    m.save
+    
+    redirect_to :back
+  end
 
   def create
     if params[:title].empty? || params[:content].empty?
