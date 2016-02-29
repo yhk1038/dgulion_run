@@ -1,5 +1,12 @@
+User.create!([
+  {username: "김용현", major: "영어영문학과", student_id: "2012110214", phonenumber: "01024824541", email: "yhk1038@hanmail.net", encrypted_password: "$2a$10$HVgaMtoTs/hSh5XuRs2G4ey3qDgYAuwPilO1qJlElsRIjewdFboFm", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-02-27 17:06:25", last_sign_in_at: "2016-02-27 17:06:25", current_sign_in_ip: "58.140.184.244", last_sign_in_ip: "58.140.184.244", confirmation_token: nil, confirmed_at: nil, confirmation_sent_at: nil, unconfirmed_email: nil},
+  {username: "임규산", major: "생명과학과", student_id: "2010111611", phonenumber: "01089742419", email: "dnay2k@naver.com", encrypted_password: "$2a$10$IHiwbKRcEkHHmx/3YfhbdOiG7BtuilHATMqiFw3cYOs03Z8dHcwbe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-02-28 06:51:43", last_sign_in_at: "2016-02-28 06:51:43", current_sign_in_ip: "61.105.15.144", last_sign_in_ip: "61.105.15.144", confirmation_token: nil, confirmed_at: nil, confirmation_sent_at: nil, unconfirmed_email: nil}
+])
 QnaPost.create!([
   {user_id: nil, title: "1", content: "1", secret: false}
+])
+Question.create!([
+  {user_name: "이름", user_major: "전공학번", user_email: "yhk1038@hanmail.net", user_phone: "핸드폰 번호", user_message: "테스트케이스1"}
 ])
 Service.create!([
   {desc_short: "온라인 프로그래밍 교육", logo_url: "http://likelion.net/assets/services/codelion-char-w-64c13a44291e84fb3b38c1a3ea2260353ea82df048bfd9bb59a25485c934572b.png", name: "코드라이언", link_url: "http://codelion.net", desc_long: "한국인터넷진흥원 KISA와 공동프로젝트 진행, NIPA 캠퍼스CEO 프로그램 선정 약 3천여명이 수강", is_live: true},
