@@ -222,10 +222,10 @@
 			</style>
 			<div class="col-md-4">
 				<div class="intro-table intro-table-hover">
-					<h5 class="white heading hide-hover">Question To the Lion</h5>
+					<h5 class="white heading hide-hover">Lion Documents</h5>
 					<div class="bottom">
-						<h4 class="white heading small-heading no-margin regular">Q & A</h4>
-						<h4 class="white heading small-pt">자주묻는 질문들</h4>
+						<h4 class="white heading small-heading no-margin regular">지원서</h4>
+						<h4 class="white heading small-pt">및 모집 안내문</h4>
 						<a href="#" data-toggle="modal" data-target="#question_noti" class="btn btn-white-fill expand">보러가기</a>
 					</div>
 				</div>
@@ -357,7 +357,7 @@
 				</button>
 				<h3 class="white">모집 및 일정</h3>
 				<h6 class="white">(카드에 커서를 올리면 순환이 잠시 멈춥니다)</h6>
-				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="18000" data-pause="hover">
 				  <!-- Indicators -->
 				  <ol class="carousel-indicators">
 				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -749,7 +749,7 @@
 			<!--<a onclick="return false" class="list-group-item active" disabled="disabled">-->
 			<!--	<h3 class="white non-active">Q n A 는 24일(수) 오픈 예정입니다.</h3></a>-->
 			<!--<div class="list-group animated fadeIn" role="menu" aria-labelledby="dLabel"></div>-->
-			<a onclick="return false" class="list-group-item active" disabled="disabled"><h4 class="white non-active">Q n A 는 24일(수) 오픈 예정입니다!</h4></a>
+			<a onclick="return false" class="list-group-item active" disabled="disabled"><h4 class="white non-active">DGUlion 지원기간 : 3/2~3/11</h4></a>
 			<div class="list-group animated fadeIn" role="menu" aria-labelledby="dLabel">
 				<style>
 					.now_size_temp{
@@ -763,8 +763,17 @@
 					}
 				</style>
 				<div class="list-group-item">
-					<img src="http://t1.daumcdn.net/thumb/C216x216/?fname=http%3A%2F%2Fi1.daumcdn.net%2Fsvc%2Fimage%2FU03%2Fsdb%2F566631A0050FB00002" style="width:50%;"><br>
-					<p class="now_size_temp3">빠른 질문을 원하신다면 <br><a href="https://www.facebook.com/DGUlion" target="_blank">여기</a>를 눌러주세요</p>
+					<img src="img/DGUlion_facebook_logo.png" style="width:50%;"><br>
+					<p class="now_size_temp3">4기 여러분들을 기다립니다♥
+					<br>
+					<% if Date.parse(Time.zone.now.to_s).to_s >= "2016-03-02" %>
+                        <a href="img/동국대학교_멋쟁이사자처럼_4기_홍길동_지원서_ver3.hwp" class="btn btn-blue ripple trial-button" download>지원서(.hwp)<br>다운로드</a>
+                        <a href="img/동국대학교_멋쟁이사자처럼_4기_홍길동_지원서.docx" class="btn btn-blue ripple trial-button" download>지원서(.docx)<br>다운로드</a>
+                    <% else %>
+                        <a href="img/recruit_document_preview.png" class="btn btn-blue ripple trial-button" style="width:49%;" download>지원 미리보기</a>
+                    <% end %>
+					<a href="img/schedule_infographic(160229).png" class="btn btn-blue ripple trial-button" style="width:49%;" download>일정 다운로드</a><br>
+                    <a href="img/recruit_noti_slides(160229).pdf" class="btn btn-blue ripple trial-button" style="margin-top:10px; width:100%;" download>모집공고 다운로드</a></p>
 				</div>
 			</div>
 			<div class="checkbox-holder text-left">
