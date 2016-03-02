@@ -7,6 +7,20 @@ class HomeController < ApplicationController
   end
 
   def index
+    ii = Array.new
+    ips = Array.new
+    cra = Array.new
+    
+    vc = ViewCount.all
+    vc.each do |v|
+      ii << v.id
+      ips << v.ip_adress
+      cra << v.created_at
+    end
+    
+    @ii = ii
+    @ips = ips
+    @cra = cra
   end
 
   def menu1
@@ -17,7 +31,7 @@ class HomeController < ApplicationController
     if today < "2016-03-02"
       @title = "<%= 'DGUlion, 모집 곧 시작합니다' if Today.to_s < '2016-03-02' %>".to_s
     elsif today >= "2016-03-02" || today < "2016-03-11"
-      @title = "<%= 'DGUlion, 지금 모집 중 입니다' if Today.to_s <= '2016-03-11' %>".to_s
+      @title = "<%= 'DGUlion, 지금 모집 중 입니다' if '2016-03-02' < Today.to_s %>".to_s
     elsif today == "2016-03-11"
       @title = "<%= 'DGUlion, 모집마감이 오늘입니다' if Today.to_s == '2016-03-11' %>".to_s
     elsif today > "2016-03-11" || today <= "2016-03-17"

@@ -1,2 +1,108 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="panel panel-default col-md-12">
+  <!-- Default panel contents -->
+  <div class="panel-heading">회원가입자 <b>총 <%= User.count %></b></div>
+  <div class="panel-body">
+    <p>총 DGUlion 페이지 회원가입자 현황 thead는 User.attribute_names</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+        <tr style="font-weight:bold;">
+            <td>id</td>
+            <td>이름(username)</td>
+            <td>전공(major)</td>
+            <td>학번(student_id)</td>
+            <td>전화번호(phonenumber)</td>
+            <td>이메일(email)</td>
+            <td>가입일(created_at)</td>
+            <td>로그인횟수(sign_in_count)</td>
+            <td>현재접속여부(current_sign_in_ip)</td>
+            <td>최종방문일(updated_at)</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% User.all.each do |user| %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.major %></td>
+                <td><%= user.student_id %></td>
+                <td><%= user.phonenumber %></td>
+                <td><%= user.email %></td>
+                <td><%= user.created_at %></td>
+                <td><%= user.sign_in_count %></td>
+                <td><%= user.current_sign_in_ip %></td>
+                <td><%= user.updated_at %></td>
+            </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default col-md-12">
+  <!-- Default panel contents -->
+  <div class="panel-heading">등록된 질문 <b>총 <%= Question.count %></b></div>
+  <div class="panel-body">
+    <p>DGUlion 페이지를 통해 등록된 질문 현황 thead는 Question.attribute_names</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+        <tr style="font-weight:bold;">
+            <td>id</td>
+            <td>이름(user_name)</td>
+            <td>전공(user_major)</td>
+            <td>전화(user_phone)</td>
+            <td>메일(user_email)</td>
+            <td>내용(user_message)</td>
+            <td>등록일(created_at)</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% Question.all.each do |q| %>
+            <tr>
+                <td><%= q.id %></td>
+                <td><%= q.user_name %></td>
+                <td><%= q.user_major %></td>
+                <td><%= q.user_phone %></td>
+                <td><%= q.user_email %></td>
+                <td><%= q.user_message %></td>
+                <td><%= q.created_at %></td>
+            </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default col-md-12">
+  <!-- Default panel contents -->
+  <div class="panel-heading">방문자 <b>총 <%= @ips.uniq.count %></b></div>
+  <div class="panel-body">
+    <p>DGUlion 페이지를 새롭게 로딩한 방문자 현황 thead는 ViewCount.attribute_names (중복제거중)</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+        <tr style="font-weight:bold;">
+            <td>id</td>
+            <td>ip주소(ip_adress)</td>
+            <td>등록일(created_at)</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% n = 0 %>
+        <% loop do %>
+            <% break if n == @ips.uniq.count %>
+            <tr>
+                <td><%= @ii[n] %></td>
+                <td><%= @ips[n] %></td>
+                <td><%= @cra[n] %></td>
+            </tr>
+            <% n=n+1 %>
+        <% end %>
+    </tbody>
+  </table>
+</div>
