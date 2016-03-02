@@ -1,6 +1,6 @@
 <div class="panel panel-default col-md-12">
   <!-- Default panel contents -->
-  <div class="panel-heading">회원가입자 <b>총 <%= User.count %></b></div>
+  <div class="panel-heading" style="font-size:25px;">회원가입자 <b>총 <%= User.count %></b></div>
   <div class="panel-body">
     <p>총 DGUlion 페이지 회원가입자 현황 thead는 User.attribute_names</p>
   </div>
@@ -42,7 +42,7 @@
 
 <div class="panel panel-default col-md-12">
   <!-- Default panel contents -->
-  <div class="panel-heading">등록된 질문 <b>총 <%= Question.count %></b></div>
+  <div class="panel-heading" style="font-size:25px;">등록된 질문 <b>총 <%= Question.count %></b></div>
   <div class="panel-body">
     <p>DGUlion 페이지를 통해 등록된 질문 현황 thead는 Question.attribute_names</p>
   </div>
@@ -78,7 +78,7 @@
 
 <div class="panel panel-default col-md-12">
   <!-- Default panel contents -->
-  <div class="panel-heading">방문자 <b>총 <%= @ips.uniq.count %></b></div>
+  <div class="panel-heading" style="font-size:25px;">방문자 <b>총 <%= ViewCount.count %>, 중복제거 : <%= @ips.uniq.count %></b></div>
   <div class="panel-body">
     <p>DGUlion 페이지를 새롭게 로딩한 방문자 현황 thead는 ViewCount.attribute_names (중복제거중)</p>
   </div>
@@ -95,7 +95,7 @@
     <tbody>
         <% n = 0 %>
         <% loop do %>
-            <% break if n == @ips.uniq.count %>
+            <% break if n == @ips.count %>
             <tr>
                 <td><%= @ii[n] %></td>
                 <td><%= @ips[n] %></td>
