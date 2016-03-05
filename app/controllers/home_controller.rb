@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     redirect_to '/home/main'
   end
 
-  def index
+  def yhk1038
     ii = Array.new
     ips = Array.new
     cra = Array.new
