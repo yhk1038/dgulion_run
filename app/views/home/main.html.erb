@@ -224,9 +224,15 @@
 				<div class="intro-table intro-table-hover">
 					<h5 class="white heading hide-hover">Lion Documents</h5>
 					<div class="bottom">
-						<h4 class="white heading small-heading no-margin regular">지원서</h4>
-						<h4 class="white heading small-pt">및 모집 안내문</h4>
-						<a href="#" data-toggle="modal" data-target="#question_noti" class="btn btn-white-fill expand">보러가기</a>
+						<% if @today >= "2016-03-02" && @today < "2016-03-11" %>
+							<h4 class="white heading small-heading no-margin regular">지원서</h4>
+							<h4 class="white heading small-pt">및 모집 안내문</h4>
+							<a href="#" data-toggle="modal" data-target="#question_noti" class="btn btn-white-fill expand">보러가기</a>
+						<% else %>
+							<h4 class="white heading small-heading no-margin regular">지원 종료</h4>
+							<h4 class="white heading small-pt">지원자 현황</h4>
+							<a href="#" data-toggle="modal" data-target="#question_noti" class="btn btn-white-fill expand">보러가기</a>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -804,13 +810,16 @@
 				</style>
 				<div class="list-group-item">
 					<img src="img/DGUlion_facebook_logo.png" style="width:50%;"><br>
-					<p class="now_size_temp3">4기 여러분들을 기다립니다♥
+					<p class="now_size_temp3">4기 모집이 마감되었습니다♥
 					<br>
-					<% if Date.parse(Time.zone.now.to_s).to_s >= "2016-03-02" %>
+					<% if Date.parse(Time.zone.now.to_s).to_s >= "2016-03-02" && Date.parse(Time.zone.now.to_s).to_s < "2016-03-12" %>
                         <a href="img/동국대학교_멋쟁이사자처럼_4기_홍길동_지원서_ver3.hwp" class="btn btn-blue ripple trial-button" style="width:49%;" download>지원서(.hwp)<br>다운로드</a>
                         <a href="img/동국대학교_멋쟁이사자처럼_4기_홍길동_지원서.docx" class="btn btn-blue ripple trial-button" style="width:49%;" download>지원서(.docx)<br>다운로드</a>
                         <a href="img/schedule_infographic(160229).png" class="btn btn-blue ripple trial-button" style="margin-top:10px; width:49%;" download>일정 다운로드</a>
                     	<a href="img/recruit_noti_slides(160229).pdf" class="btn btn-blue ripple trial-button" style="margin-top:10px; width:49%;" download>모집공고 다운로드</a>
+                    <% elsif @today >= "2016-03-12" %>
+                    	<a href="#" class="btn btn-blue ripple trial-button" style="width:49%;">총 지원자<br>59명</a>
+                        <a href="#" class="btn btn-blue ripple trial-button" style="width:49%;">예상 경쟁률<br>2.36 : 1</a>
                     <% else %>
                         <a href="img/recruit_document_preview.png" class="btn btn-blue ripple trial-button" style="width:49%;" download>지원 미리보기</a>
                         <a href="img/schedule_infographic(160229).png" class="btn btn-blue ripple trial-button" style="width:49%;" download>일정 다운로드</a><br>
