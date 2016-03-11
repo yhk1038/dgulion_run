@@ -28,14 +28,14 @@ class HomeController < ApplicationController
   
   def main
     today = Date.parse(Time.zone.now.to_s).to_s
-    if today < "2016-03-02"
-      @title = "<%= 'DGUlion, 모집 곧 시작합니다' if Today.to_s < '2016-03-02' %>".to_s
-    elsif today >= "2016-03-02" || today < "2016-03-11"
-      @title = "<%= 'DGUlion, 지금 모집 중 입니다' if '2016-03-02' < Today.to_s %>".to_s
-    elsif today == "2016-03-11"
-      @title = "<%= 'DGUlion, 모집마감이 오늘입니다' if Today.to_s == '2016-03-11' %>".to_s
-    elsif today > "2016-03-11" || today <= "2016-03-17"
-      @title = "<%= 'DGUlion, 합격자를 선발중입니다' if Today.to_s <= '2016-03-17' %>".to_s
+    # if today < "2016-03-02"
+    #   @title = "<%= 'DGUlion, 모집 곧 시작합니다' if Today.to_s < '2016-03-02' %>".to_s
+    # elsif today >= "2016-03-02" || today < "2016-03-11"
+    #   @title = "<%= 'DGUlion, 지금 모집 중 입니다' if '2016-03-02' < Today.to_s %>".to_s
+    # elsif today == "2016-03-11"
+    #   @title = "<%= 'DGUlion, 모집마감이 오늘입니다' if Today.to_s == '2016-03-11' %>".to_s
+    if today > "2016-03-11" || today <= "2016-03-17"
+      @title = "<%= 'DGUlion, 모집이 마감되었습니다' if Today.to_s <= '2016-03-17' %>".to_s
     elsif today > "2016-03-17"
       @title = "<%= 'DGUlion, 시작합니다' if Today.to_s == '2016-03-18' %>".to_s
     end
