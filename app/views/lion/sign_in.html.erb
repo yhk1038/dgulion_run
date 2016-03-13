@@ -1,0 +1,23 @@
+<body style="background-image: url('../img/header_lion.png'); background-size: cover;">
+    <div class="col-md-3"></div>
+    
+    <div class="panel panel-default col-md-6" style="background: rgba(255, 255, 255, 0.7); margin-top:10%; padding:50px 50px 50px 50px;">
+      <!-- Default panel contents -->
+      <!--<div class="panel-heading" style="font-size:25px;">환영합니다!</div>-->
+      <div class="panel-body">
+        <center>
+            <p style="font-weight:bold;font-size:20px;"> 환영합니다 ! 예비 사자 여러분 !</p><br>
+            <p style="color:red"><b> <%= flash[:error] %> </b></p>
+            <form action="/lion/sign_in_" METHOD="POST">
+                <input class="" type="text" name="name" placeholder="Your Name">
+                <input class="" type="text" name="password" placeholder="PassWord">
+                <input class="btn btn-warning btn-sm" type="submit" value="Sign_in">
+            </form>
+        </center>
+      </div>
+    
+      
+    </div>
+    
+    <div class="col-md-3"></div>
+</body>

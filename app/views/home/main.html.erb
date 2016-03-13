@@ -14,6 +14,20 @@
 			<a class="navbar-brand navbar_logo_fix" href="/" style=""><img src="img/dgulion_simple_logo_deactive_160222(337x52).png" data-active-url="img/dgulion_simple_logo_160222(337x52).png" alt="" style="width:80%; height:initial;"></a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
+		<% if params[:lion]=='2016' %>
+			<style>
+				.navbar-nav > li > a{
+					padding: 15px 16px;
+				}
+				.btn-lion{
+					background: #F30000;
+				}
+				.nav>li>a.btn-lion:focus, .nav>li>a.btn-lion:hover{
+				    color: white;
+				    background:rgb(243, 192, 0);
+				}
+			</style>
+		<% end %>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right main-nav">
 				<li><a href="#intro">Intro</a></li>
@@ -25,10 +39,15 @@
 				<a href="/users/sign_out"><li class="btn btn-blue" style="padding: 13px 14px;">Log Out</li></a>
 				
 				<% else %>
-				
-				<li><a href="/users/sign_up" data-toggle="modal" data-target="#modal1" class="btn btn-blue" style="padding: 13px 10px;">Sign Up</a></li>
-				<li><a href="/users/sign_in" data-toggle="modal" data-target="#modal1" class="btn btn-blue" style="padding: 13px 14px;">Log In</a></li>
-				
+				<% if params[:lion]=='2016' %>
+					<li><a href="/users/sign_up" data-toggle="modal" data-target="#modal1" class="btn btn-blue" style="padding: 10px 10px;">Sign Up</a></li>
+					<li><a href="/users/sign_in" data-toggle="modal" data-target="#modal1" class="btn btn-blue" style="padding: 10px 10px;">Log In</a></li>
+					<li><a href="/lion/sign_in" class="btn btn-lion" style="padding: 10px 10px;">Lion</a></li>
+					<!--<li><a href="/users/sign_in" data-toggle="modal" data-target="#modal1" class="btn btn-blue" style="padding: 13px 14px;">Log In</a></li>-->
+				<% else %>
+					<li><a href="/users/sign_up" data-toggle="modal" data-target="#modal1" class="btn btn-blue" style="padding: 10px 10px;">Sign Up</a></li>
+					<li><a href="/users/sign_in" data-toggle="modal" data-target="#modal1" class="btn btn-blue" style="padding: 10px 14px;">Log In</a></li>
+				<% end %>
 				<!--<li><a href="#" data-toggle="modal" data-target="#modal111" class="btn btn-blue">Sign Up</a></li>-->
 				<!--<li><a href="/users/sign_in" data-toggle="modal" data-target="#modal" class="btn btn-blue">Log In</a></li>-->
 				<% end %>
@@ -228,6 +247,10 @@
 							<h4 class="white heading small-heading no-margin regular">지원서</h4>
 							<h4 class="white heading small-pt">및 모집 안내문</h4>
 							<a href="#" data-toggle="modal" data-target="#question_noti" class="btn btn-white-fill expand">보러가기</a>
+						<% elsif @today == "2016-03-13" %>
+							<h4 class="white heading small-heading no-margin regular">서류심사</h4>
+							<h4 class="white heading small-pt">통과여부</h4>
+							<a href="#" data-toggle="modal" data-target="#question_noti2" class="btn btn-white-fill expand">확인하기</a>
 						<% else %>
 							<h4 class="white heading small-heading no-margin regular">지원 종료</h4>
 							<h4 class="white heading small-pt">지원자 현황</h4>
@@ -825,6 +848,68 @@
                         <a href="img/schedule_infographic(160229).png" class="btn btn-blue ripple trial-button" style="width:49%;" download>일정 다운로드</a><br>
                     	<a href="img/recruit_noti_slides(160229).pdf" class="btn btn-blue ripple trial-button" style="margin-top:10px; width:100%;" download>모집공고 다운로드</a>
                     <% end %>
+					</p>
+				</div>
+			</div>
+			<div class="checkbox-holder text-left">
+				<div class="checkbox">
+					<input type="checkbox" value="None" id="squaredOne" name="check" />
+					<label for="squaredOne"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="question_noti2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content modal-popup">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">
+					<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				</span>
+			</button>
+			<!--<a onclick="return false" class="list-group-item active" disabled="disabled">-->
+			<!--	<h3 class="white non-active">Q n A 는 24일(수) 오픈 예정입니다.</h3></a>-->
+			<!--<div class="list-group animated fadeIn" role="menu" aria-labelledby="dLabel"></div>-->
+			<a onclick="return false" class="list-group-item active" disabled="disabled"><h4 class="white non-active">We'll see each other SOON</h4></a>
+			<div class="list-group animated fadeIn" role="menu" aria-labelledby="dLabel">
+				<style>
+					.now_size_temp{
+						font-size:21px;
+					}
+					.now_size_temp2{
+						font-size:16px;
+					}
+					.non-active{
+						cursor:default;
+					}
+				</style>
+				<div class="list-group-item">
+					<img src="img/DGUlion_facebook_logo.png" style="width:50%;"><br>
+					<p class="now_size_temp3">다음은 저희와 함께 면접으로 만나게 될 분들입니다 축하합니다♥
+					<br>
+					<p>====== 심사정보 & 안내사항 ====</p>
+					<p style="text-align:left;font-weight: bold;">
+						심사 방법은 1:all 방식(운영진 모두가 한명 한명 심사).<br>
+						심사기간 3월 10일 ~ 12일.<br><br>
+						1. 심사하는데 정말 많은 어려움이 있었습니다.<br><br>
+						
+						2. 서류만으로는 결정이 힘들어, 당초 계획과는 다르게 
+						14,15 양일간 무려 50명을 만나뵙게 되었습니다.<br><br>
+						
+						3. 50명의 꿈을 만나볼 생각에 설레기도, 긴장되기도 합니다.<br><br>
+						
+						4. 오늘중에 각자 지원서(또는 중앙홈페이지 등록시)에 올려주신 이메일로
+						더욱 자세한 안내문을 발송해 드릴 예정입니다.<br><br>
+						
+						5. 최대한 공정을 기하기 위해 직접 사이트를 자체제작하여 사용했습니다.<br><br>
+						
+						6. 아쉽게도 만나뵙지 못하게 되신 분들께도 메일을 보내드릴 예정이니, 
+						확인해주시면 정말 감사드리겠습니다.
+					</p>
+					<br>
+					<p>====== 심사결과 ====</p>
+					<%= render :partial => '/home/first_pass' %>
 					</p>
 				</div>
 			</div>

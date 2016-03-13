@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+  
+  @bgurl = ''
+  
   def intro
     mark = ViewCount.new
     mark.ip_adress = request.remote_ip
@@ -40,6 +43,7 @@ class HomeController < ApplicationController
       @title = "<%= 'DGUlion, 시작합니다' if Today.to_s == '2016-03-18' %>".to_s
     end
     #########################################
+    #first_pass = Array.new
     arr_object_id = Array.new
     univ_arr = Array.new
     univ_url_arr = Array.new

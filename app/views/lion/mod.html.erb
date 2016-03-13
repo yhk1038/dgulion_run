@@ -1,0 +1,49 @@
+<body style="background-image: url('../img/header_lion.png'); background-size: cover;">
+    <div class="col-md-3"></div>
+    
+    <div class="panel panel-default col-md-6" style="background: rgba(255, 255, 255, 0.7); margin-top:10%; padding:50px 50px 50px 50px;">
+      <!-- Default panel contents -->
+      <!--<div class="panel-heading" style="font-size:25px;">환영합니다!</div>-->
+      <div class="panel-body">
+        <center>
+            <p style="font-weight:bold;font-size:20px;"> 시간을 선택해주세요 ! </p><br>
+            <p style="color:red"><b> <%= flash[:error] %> </b></p>
+            <form action="/lion/mod_" METHOD="POST">
+                <table class="table">
+                <thead>
+                    <tr>
+                    <td style="width:50%">1지망</td>
+                        <td>
+                        <select name="time1" class="rate_input">
+                            <option value="0">미선택</option>
+                            <% LTime.all.each do |x| %>
+                                <% next unless x.time1 == 0 && x.time2 == 0 %>
+                                <option value="<% x.id %>"><% x.name %></option>
+                            <% end %>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>2지망</td>
+                        <td>
+                        <select name="time2" class="rate_input">
+                            <option value="0">미선택</option>
+                            <% LTime.all.each do |x| %>
+                                <option value="<% x.id %>"><% x.name %></option>
+                            <% end %>
+                        </select>
+                        </td>
+                    </tr>
+                </thead>
+                </table>
+                <input style="padding: 10px 30px 10px 30px"  class="btn btn-primary" type="submit" value="완료">
+                <a style="padding: 10px 30px 10px 30px" href="/lion/list" class="btn btn-danger">취소</a>
+            </form>
+        </center>
+      </div>
+    
+      
+    </div>
+    
+    <div class="col-md-3"></div>
+</body>

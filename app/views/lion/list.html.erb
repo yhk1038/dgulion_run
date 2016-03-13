@@ -1,0 +1,43 @@
+<body style="background-image: url('../img/header_lion.png'); background-size: cover;">
+    <div class="col-md-3"></div>
+    
+    <div class="panel panel-default col-md-6" style="background: rgba(255, 255, 255, 0.7); margin-top:10%; padding:50px 50px 50px 50px;">
+      <!-- Default panel contents -->
+      <div class="panel-body">
+        <center>
+            <%  %>
+                <p style="font-weight:bold;font-size:20px;"> <% %> 님 면접 시간을 선택해주세요 !</p><br>
+            <%  %>
+                <p style="font-weight:bold;font-size:20px;"> <% %> 님 면접 시간을 확인해주세요 !</p><br>
+            <%  %>
+            <p style="color:red"><b> <%= flash[:error] %> </b></p>
+            <hr>
+            <u><p style="font-weight:bold;font-size:25px;">면접시간</p></u>
+            <table class="table">
+            <thead>
+                <tr>
+                <td style="width:50%">1지망</td>
+                    <td>1
+                    </td>
+                </tr>
+                <tr>
+                <td>2지망</td>
+                    <td>2
+                    </td>
+                </tr>
+            </thead>
+            </table>
+            <br><br>
+            <% if current_luser.time1 == 0 && current_luser.time2 == 0 %>
+                <a style="padding: 10px 30px 10px 30px" class="btn btn-primary" href="/lion/mod">선택하러 가기!</a>
+            <% else %>
+                <a style="padding: 10px 30px 10px 30px" class="btn btn-warning" href="/lion/mod">수정하러 가기!</a>
+            <% end %>
+        </center>
+      </div>
+    
+      
+    </div>
+    
+    <div class="col-md-3"></div>
+</body>
