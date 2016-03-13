@@ -1,5 +1,5 @@
 class LionController < ApplicationController
-    before_action :is_lsign_in?, except: [:sign_in, :sign_in_, :lion_admin]
+    before_action :is_lsign_in?, except: [:sign_in, :sign_in_, :lion_admin, :no_time, :no_time2, :user_seedd, :time_seedd, :time_num]
     before_action :bgl
     
     def bgl
