@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229064548) do
+ActiveRecord::Schema.define(version: 20160313054646) do
+
+  create_table "l_times", force: :cascade do |t|
+    t.string   "name",       default: ""
+    t.integer  "time1",      default: 0
+    t.integer  "time2",      default: 0
+    t.integer  "time3",      default: 0
+    t.integer  "time4",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "l_users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "password"
+    t.integer  "time1",      default: 0
+    t.integer  "time2",      default: 0
+    t.integer  "time3",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "notimes", force: :cascade do |t|
+    t.integer  "ltime_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "qna_comments", force: :cascade do |t|
     t.integer  "qna_post_id"

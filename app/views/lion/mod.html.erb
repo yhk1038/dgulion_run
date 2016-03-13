@@ -1,5 +1,14 @@
     <div class="col-md-3"></div>
-    
+    <style>
+    .btn{
+        /*background:none;*/
+    }
+    .select_input{
+        color:black;
+        width:100%;
+        
+    }
+    </style>
     <div class="panel panel-default col-md-6" style="background: rgba(255, 255, 255, 0.7); margin-top:10%; padding:50px 50px 50px 50px;">
       <!-- Default panel contents -->
       <!--<div class="panel-heading" style="font-size:25px;">환영합니다!</div>-->
@@ -11,25 +20,49 @@
                 <table class="table">
                 <thead>
                     <tr>
-                    <td style="width:50%">1지망</td>
+                    <td style="width:50%">1지망[<%= LTime.find(current_luser.time1).name if current_luser.time1 != 0 %><%= "미선택" if current_luser.time1 == 0 %>]</td>
                         <td>
-                        <select name="time1" class="rate_input">
+                        <select name="time1" class="select_input">
                             <option value="0">미선택</option>
                             <% LTime.all.each do |x| %>
-                                <% next unless x.time1 == 0 && x.time2 == 0 %>
-                                <option value="<% x.id %>"><% x.name %></option>
-                            <% end %>
+                                <%
+                                if x.time1 != 0 && x.time2 != 0
+                                    next if $time_num < 3
+                                    if x.time3 != 0
+                                        next if $time_num > 2
+                                        next if x.time4 != 0 && $time_num > 3
+                                    end
+                                end
+                                flag = 0
+                                Notime.all.each do |y|
+                                    flag = 1 if y.ltime_id == x.id
+                                end
+                                next if flag == 1
+                                %>
+                                <option style="color:black;" value="<%= x.id %>"><%= x.name %></option>
+                            <%
+                            end
+                            %> 
                         </select>
                         </td>
                     </tr>
                     <tr>
-                    <td>2지망</td>
+                    <td>2지망[<%= LTime.find(current_luser.time2).name if current_luser.time2 != 0 %><%= "미선택" if current_luser.time2 == 0 %>]</td>
                         <td>
-                        <select name="time2" class="rate_input">
+                        <select name="time2" class="select_input">
                             <option value="0">미선택</option>
                             <% LTime.all.each do |x| %>
-                                <option value="<% x.id %>"><% x.name %></option>
-                            <% end %>
+                                <%
+                                flag = 0
+                                Notime.all.each do |y|
+                                    flag = 1 if y.ltime_id == x.id
+                                end
+                                next if flag == 1
+                                %>
+                                <option value="<%= x.id %>"><%= x.name %></option>
+                            <%
+                            end
+                            %>
                         </select>
                         </td>
                     </tr>

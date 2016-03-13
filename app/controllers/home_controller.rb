@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
   
   @bgurl = ''
+  def error
+    @bgurl = '/home/img/header_lion.png'
+  end
   
   def intro
     mark = ViewCount.new

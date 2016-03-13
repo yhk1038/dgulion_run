@@ -6,15 +6,12 @@
 
       <div class="panel-body">
         <center>
-            <p style="color:black;font-weight:bold;font-size:20px;"> 환영합니다 ! 예비 사자 여러분 !</p><br>
+            <p style="font-weight:bold;font-size:20px;"> 비밀번호를 변경하세요 !</p><br>
             <p style="color:red"><b> <%= flash[:error] %> </b></p>
-            <form action="/lion/sign_in_" METHOD="POST">
-                <input class="" type="text" name="name" placeholder="Your Name">
+            <form action="/lion/mod_pwd_" METHOD="POST">
                 <input class="" type="password" name="password" placeholder="PassWord">
-                <input class="btn btn-warning btn-sm" style="background: #f39800; padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;" type="submit" value="Sign_in">
+                <input class="" type="password" name="password2" placeholder="Confirm PassWord">
+                <input class="btn btn-warning btn-sm" style="" type="submit" value="변경하기">
             </form>
         </center>
       </div>

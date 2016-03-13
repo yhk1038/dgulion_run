@@ -1,15 +1,17 @@
-<body style="background-image: url('../img/header_lion.png'); background-size: cover;">
+
     <div class="col-md-3"></div>
     
     <div class="panel panel-default col-md-6" style="background: rgba(255, 255, 255, 0.7); margin-top:10%; padding:50px 50px 50px 50px;">
       <!-- Default panel contents -->
       <div class="panel-body">
+      <a style="padding: 5px; margin-bottom:15px;" class="btn btn-primary" href="/lion/mod_pwd">비밀번호 변경</a>
+      <a style="padding: 5px; margin-bottom:15px;" class="btn btn-danger" href="/lion/sign_out">로그아웃</a><br>
         <center>
-            <%  %>
-                <p style="font-weight:bold;font-size:20px;"> <% %> 님 면접 시간을 선택해주세요 !</p><br>
-            <%  %>
-                <p style="font-weight:bold;font-size:20px;"> <% %> 님 면접 시간을 확인해주세요 !</p><br>
-            <%  %>
+            <% if current_luser.time1 == 0 && current_luser.time2 == 0 %>
+                <p style="font-weight:bold;font-size:20px;"> <%= current_luser.name %> 님 면접 시간을 선택해주세요 !</p><br>
+            <% else %>
+                <p style="font-weight:bold;font-size:20px;"> <%= current_luser.name %> 님 면접 시간을 확인해주세요 !</p><br>
+            <% end %>
             <p style="color:red"><b> <%= flash[:error] %> </b></p>
             <hr>
             <u><p style="font-weight:bold;font-size:25px;">면접시간</p></u>
@@ -17,12 +19,14 @@
             <thead>
                 <tr>
                 <td style="width:50%">1지망</td>
-                    <td>1
+                    <td><%= LTime.find(current_luser.time1).name if current_luser.time1 != 0 %>
+                    <%= "미선택" if current_luser.time1 == 0 %>
                     </td>
                 </tr>
                 <tr>
                 <td>2지망</td>
-                    <td>2
+                    <td><%= LTime.find(current_luser.time2).name if current_luser.time2 != 0 %>
+                    <%= "미선택" if current_luser.time2 == 0 %>
                     </td>
                 </tr>
             </thead>
@@ -40,4 +44,3 @@
     </div>
     
     <div class="col-md-3"></div>
-</body>

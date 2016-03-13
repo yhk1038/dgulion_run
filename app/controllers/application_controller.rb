@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
   
+  #한 타임별 면접자 수
+  $time_num = 2
+  
+  
   helper_method :current_luser
   def current_luser
     if session[:luser_id]
