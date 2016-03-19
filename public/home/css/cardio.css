@@ -1,4 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+
+.team-4 {
+margin: 25px 0;
+border: solid rgb(255, 205, 48);
+padding-bottom: 0px; 
+background: white;
+box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);
+}
+
 body {
 	font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 	font-size: 14px;

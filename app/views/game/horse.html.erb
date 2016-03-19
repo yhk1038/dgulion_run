@@ -1,0 +1,63 @@
+<style>  
+    .table { border-collapse:collapse; }  
+    td { 
+        /*border:1px solid black;*/
+    width: <%= 100 / 15 %>%;height:50px}
+</style>
+
+<div class="row" style="padding-top: 10px;">
+    <div class="col-md-2">
+        <a style="float:right;" href="/game/horse/<%= params[:id].to_i - 1 %>"><</a>
+    </div>
+    <div class="col-md-8">
+        <center>
+            <h1> Round <%= params[:id] %> </h1>
+        </center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <% i = 0
+                    loop do
+                        i+=1
+                        break if i==@max+1
+                    %>
+                    <td style="border:none;"></td>
+                    <% end %>
+                    <td style="border:none;">Goal</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                i = 0
+                loop do 
+                    i+=1
+                    break if i==@hn+1
+                %>
+                <tr>
+                    <td><%= i %>번 마</td>
+                    <%
+                    j=0
+                    loop do 
+                        j+=1
+                        break if j==@max+1
+                    %>
+                        <!--<td style="<%= "background:black;" if @horse[params[:id].to_i][i] == j %>"></td>-->
+                        <td>
+                        <% if @horse[params[:id].to_i][i] == j %>
+                            <img src="http://dgu-lion2-yhk1038.c9users.io/img/game/horse.jpg" style="width:100%;" />
+                        <% end %>
+                        </td>
+                    <% end %>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    
+    
+    
+    
+    </div>
+    <div class="col-md-2">
+        <a href="/game/horse/<%= params[:id].to_i + 1 %>">></a>
+    </div>
+</div>
