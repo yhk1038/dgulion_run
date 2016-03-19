@@ -40,11 +40,11 @@ class HomeController < ApplicationController
     #   @title = "<%= 'DGUlion, 지금 모집 중 입니다' if '2016-03-02' < Today.to_s %>".to_s
     # elsif today == "2016-03-11"
     #   @title = "<%= 'DGUlion, 모집마감이 오늘입니다' if Today.to_s == '2016-03-11' %>".to_s
-    if @today > "2016-03-11" || @today <= "2016-03-17"
-      @title = "<%= 'DGUlion, 모집이 마감되었습니다' if Today.to_s <= '2016-03-17' %>".to_s
-    elsif @today > "2016-03-17"
+    #if @today > "2016-03-11" || @today <= "2016-03-17"
+    #  @title = "<%= 'DGUlion, 모집이 마감되었습니다' if Today.to_s <= '2016-03-17' %>".to_s
+    #elsif @today > "2016-03-17"
       @title = "<%= 'DGUlion, 시작합니다' if Today.to_s == '2016-03-18' %>".to_s
-    end
+    #end
     #########################################
     #first_pass = Array.new
     arr_object_id = Array.new
