@@ -8,13 +8,16 @@
 #  {username: "조다빈", major: "경영학과", student_id: "2014111489", phonenumber: "01052581025", email: "beeeen25@naver.com", encrypted_password: "$2a$10$eRNIWisVTGiGbhjSJw7kgeyF3tf8xkgQtFcr/yZCGwIdK93rIqwd2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-03-13 07:40:05", last_sign_in_at: "2016-03-11 14:07:24", current_sign_in_ip: "175.223.3.228", last_sign_in_ip: "222.237.11.116", confirmation_token: nil, confirmed_at: nil, confirmation_sent_at: nil, unconfirmed_email: nil},
 #  {username: "김창기r", major: "정보통신공학과", student_id: "2012112087", phonenumber: "010-4122-4450", email: "kcg44501@daum.net", encrypted_password: "$2a$10$0nfjgivIdCM7Fh8YlyebF.UQgcQx.vTQ4XD3mr0bGN1gtkJCP804W", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-03-13 06:25:35", last_sign_in_at: "2016-03-13 06:25:35", current_sign_in_ip: "121.130.182.215", last_sign_in_ip: "121.130.182.215", confirmation_token: nil, confirmed_at: nil, confirmation_sent_at: nil, unconfirmed_email: nil}
 #])
+#User.create!([
+#  {username: "김용현", major: "영어영문학과", student_id: "2012110214", phonenumber: "01024824541", email: "yhk1038@hanmail.net", encrypted_password: "$2a$10$llkTBCATrn8V6JESLWWdLOV0ZLJpmH2NW.vHTJz1hM8XGYQB4qtK2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-03-03 13:59:26", last_sign_in_at: "2016-03-03 13:59:26", current_sign_in_ip: "175.192.225.4", last_sign_in_ip: "175.192.225.4", confirmation_token: nil, confirmed_at: nil, confirmation_sent_at: nil, unconfirmed_email: nil}
+#])
 LTime.create!([
-  {name: "1: 월 12:30~12:50", time1: 0, time2: 0, time3: 0, time4: 0},
+  {name: "1: 월 12:30~12:50", time1: 1, time2: 2, time3: 0, time4: 0},
   {name: "2: 월 13:00~13:20", time1: 0, time2: 0, time3: 0, time4: 0},
   {name: "3: 월 13:30~13:50", time1: 0, time2: 0, time3: 0, time4: 0},
-  {name: "4: 월 13:50~14:10", time1: 0, time2: 0, time3: 0, time4: 0},
-  {name: "5: 월 14:10~14:30", time1: 0, time2: 0, time3: 0, time4: 0},
-  {name: "6: 월 14:30~14:50", time1: 0, time2: 0, time3: 0, time4: 0},
+  {name: "4: 월 13:50~14:10", time1: 4, time2: 41, time3: 0, time4: 0},
+  {name: "5: 월 14:10~14:30", time1: 11, time2: 1, time3: 0, time4: 0},
+  {name: "6: 월 14:30~14:50", time1: 10, time2: 0, time3: 0, time4: 0},
   {name: "7: 월 15:00~15:20", time1: 0, time2: 0, time3: 0, time4: 0},
   {name: "8: 월 15:20~15:40", time1: 0, time2: 0, time3: 0, time4: 0},
   {name: "9: 월 16:00~16:20", time1: 0, time2: 0, time3: 0, time4: 0},
@@ -946,5 +949,21 @@ ViewCount.create!([
   {ip_adress: "211.241.78.243"},
   {ip_adress: "220.72.158.197"},
   {ip_adress: "175.223.11.237"},
-  {ip_adress: "223.62.67.32"}
+  {ip_adress: "223.62.67.32"},
+  {ip_adress: "175.192.225.4"},
+  {ip_adress: "175.192.225.4"},
+  {ip_adress: "58.140.184.244"},
+  {ip_adress: "58.140.184.244"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "175.210.250.252"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "39.7.15.25"},
+  {ip_adress: "121.128.167.12"},
+  {ip_adress: "121.128.167.12"}
 ])

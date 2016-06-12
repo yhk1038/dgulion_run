@@ -30,9 +30,10 @@
 		<% end %>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right main-nav">
-				<li><a href="#intro">Intro</a></li>
+				<!--<li><a href="#intro">Intro</a></li>-->
 				<li><a href="#About">About</a></li>
 				<li><a href="#admin">Admin</a></li>
+				<li><a href="#4th_members">Members</a></li>
 				<li><a href="#pricing">Others</a></li>
 				<li><a href="#contact">Contact</a></li>
 				<% if current_user %>
@@ -173,7 +174,7 @@
 									<h5 class="regular white p15">모집 결과 발표</h5>
 								</div>
 								<div class="col-xs-6 text-right">
-									<h5 class="white p15">3/17일 00:00</h5>
+									<h5 class="white p15">3/17일 21:00</h5>
 								</div>
 							</div>
 						</div>
@@ -601,6 +602,49 @@
         </div>
 	</div>
 </section>
+
+<!--4기 소개-->
+<section class="section gray-bg">
+    <img src="img/change_the_world_with_coding2.png" alt="" class="" style="width:100%;">
+</section>
+<section id="4th_members" class="section gray-bg">
+	<div class="container">
+		<div class="row title text-center">
+			<h2 class="margin-top">4th. lions</h2>
+			<h4 class="light muted">Pride of Lions</h4>
+            <h4 class="light muted">2016. 4th. likelion</h4>
+		</div>
+		<style>
+		.x_position{
+			background-position-x: -10px;
+			
+		}
+		</style>
+		<div class="row">
+			<% l = -1 %>
+			<%# @mem4.each do |x| %>
+			<% loop do %>
+				<% l += 1 %>
+				<% break if l == 30 %>
+				<div class="col-md-2">
+					<div class="team team-4 text-center" style="padding-bottom:0px;">
+						<div class="cover x_position" style="background:url('img/4th/<%= @mem4[l] %>.jpg'); background-position-x: -31px;background-size: cover;">
+							<div class="overlay text-center" style="height:220px;">
+								<h3 class="white"><%= @mem4[l] %></h3>
+								<h5 class="light light-white"><%= @mem4h[l] %></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			
+			
+        </div>
+        
+        
+	</div>
+</section>
+<!--4기 소개 끝-->
 <section id="pricing" class="section">
 	<div class="container">
 		<div class="row title text-center">

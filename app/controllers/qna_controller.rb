@@ -6,6 +6,7 @@ class QnaController < ApplicationController
   def send_email
     m = Question.new
     m.user_name     = params[:user_name]
+    m.user_name     = "익명" if params[:user_name].nil?
     m.user_major    = params[:user_major]
     m.user_email    = params[:user_email]
     m.user_phone    = params[:user_phone]
